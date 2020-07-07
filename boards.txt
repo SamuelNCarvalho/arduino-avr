@@ -1,293 +1,385 @@
-# See: http://code.google.com/p/arduino/wiki/Platforms
+########## Generated boards.txt ##########
 
 menu.cpu=Processor
+menu.keyboardid=USB Device ID
+menu.protocol=Protocol
+menu.debug=Debug
+menu.ledpin=Neopixel (WS2812b)
+menu.bridge=Serial Bridge
+menu.bridgebutton=Serial Bridge Enable Pin
+menu.bridgerst=Serial Bridge Reset Pin
+menu.bridge0=Serial Bridge GPIO-0 Pin
 
-##############################################################
+########## Generic ATmega32u4 ##########
 
-yun.name=Arduino Yún
-yun.upload.via_ssh=true
+atmega32u4.name=Generic ATmega32u4
 
-yun.vid.0=0x2341
-yun.pid.0=0x0041
-yun.vid.1=0x2341
-yun.pid.1=0x8041
-yun.vid.2=0x2A03
-yun.pid.2=0x0041
-yun.vid.3=0x2A03
-yun.pid.3=0x8041
+atmega32u4.upload.tool=avrdude
+atmega32u4.upload.protocol=avr109
+atmega32u4.upload.maximum_size=28672
+atmega32u4.upload.maximum_data_size=2560
+atmega32u4.upload.speed=57600
+atmega32u4.upload.disable_flushing=true
+atmega32u4.upload.use_1200bps_touch=true
+atmega32u4.upload.wait_for_upload_port=true
 
-yun.upload.tool=avrdude
-yun.upload.protocol=avr109
-yun.upload.maximum_size=28672
-yun.upload.maximum_data_size=2560
-yun.upload.speed=57600
-yun.upload.disable_flushing=true
-yun.upload.use_1200bps_touch=true
-yun.upload.wait_for_upload_port=true
+atmega32u4.bootloader.tool=avrdude
+atmega32u4.bootloader.unlock_bits=0x3F
+atmega32u4.bootloader.lock_bits=0x2F
+atmega32u4.bootloader.low_fuses=0xFF
+atmega32u4.bootloader.high_fuses=0xD8
 
-yun.bootloader.tool=avrdude
-yun.bootloader.low_fuses=0xff
-yun.bootloader.high_fuses=0xd8
-yun.bootloader.extended_fuses=0xfb
-yun.bootloader.file=caterina/Caterina-Yun.hex
-yun.bootloader.noblink=caterina/Caterina-Yun-noblink.hex
-yun.bootloader.unlock_bits=0x3F
-yun.bootloader.lock_bits=0x2F
+atmega32u4.build.board=AVR_ATMEGA32U4
+atmega32u4.build.core=arduino
+atmega32u4.build.mcu=atmega32u4
+atmega32u4.build.variant=atmega32u4
 
-yun.build.mcu=atmega32u4
-yun.build.f_cpu=16000000L
-yun.build.vid=0x2341
-yun.build.pid=0x8041
-yun.build.usb_product="Arduino Yun"
-yun.build.board=AVR_YUN
-yun.build.core=arduino
-yun.build.variant=yun
-yun.build.extra_flags={build.usb_flags}
+# CPU #
+atmega32u4.menu.cpu.16MHzatmega32U4=5V, 16 MHz
+atmega32u4.menu.cpu.16MHzatmega32U4.build.f_cpu=16000000L
+atmega32u4.menu.cpu.16MHzatmega32U4.bootloader.extended_fuses=0xCB
+atmega32u4.menu.cpu.16MHzatmega32U4.bootloader.file=caterina/Caterina-promicro16.hex
 
-##############################################################
+atmega32u4.menu.cpu.8MHzatmega32U4=3.3V, 8 MHz
+atmega32u4.menu.cpu.8MHzatmega32U4.build.f_cpu=8000000L
+atmega32u4.menu.cpu.8MHzatmega32U4.bootloader.extended_fuses=0xFE
+atmega32u4.menu.cpu.8MHzatmega32U4.bootloader.file=caterina/Caterina-promicro8.hex
 
-uno.name=Arduino Uno
+# Keyboard ID #
+atmega32u4.menu.keyboardid.default=Arduino Leonardo
+atmega32u4.menu.keyboardid.default.build.vid=0x2341
+atmega32u4.menu.keyboardid.default.build.pid=0x8036
+atmega32u4.menu.keyboardid.default.build.usb_product=Leonardo
+atmega32u4.menu.keyboardid.default.build.usb_manufacturer=Arduino
 
-uno.vid.0=0x2341
-uno.pid.0=0x0043
-uno.vid.1=0x2341
-uno.pid.1=0x0001
-uno.vid.2=0x2A03
-uno.pid.2=0x0043
-uno.vid.3=0x2341
-uno.pid.3=0x0243
+atmega32u4.menu.keyboardid.apple=Apple Aluminium Keyboard
+atmega32u4.menu.keyboardid.apple.build.vid=0x05ac
+atmega32u4.menu.keyboardid.apple.build.pid=0x0221
+atmega32u4.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+atmega32u4.menu.keyboardid.apple.build.usb_manufacturer=Apple
 
-uno.upload.tool=avrdude
-uno.upload.protocol=arduino
-uno.upload.maximum_size=32256
-uno.upload.maximum_data_size=2048
-uno.upload.speed=115200
+atmega32u4.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+atmega32u4.menu.keyboardid.appleint.build.vid=0x05ac
+atmega32u4.menu.keyboardid.appleint.build.pid=0x0259
+atmega32u4.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+atmega32u4.menu.keyboardid.appleint.build.usb_manufacturer=Apple
 
-uno.bootloader.tool=avrdude
-uno.bootloader.low_fuses=0xFF
-uno.bootloader.high_fuses=0xDE
-uno.bootloader.extended_fuses=0xFD
-uno.bootloader.unlock_bits=0x3F
-uno.bootloader.lock_bits=0x0F
-uno.bootloader.file=optiboot/optiboot_atmega328.hex
+atmega32u4.menu.keyboardid.logitechhid=Logitech USB Keyboard
+atmega32u4.menu.keyboardid.logitechhid.build.vid=0x046d
+atmega32u4.menu.keyboardid.logitechhid.build.pid=0xc316
+atmega32u4.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+atmega32u4.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
 
-uno.build.mcu=atmega328p
-uno.build.f_cpu=16000000L
-uno.build.board=AVR_UNO
-uno.build.core=arduino
-uno.build.variant=standard
+atmega32u4.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+atmega32u4.menu.keyboardid.logitechgaming.build.vid=0x046d
+atmega32u4.menu.keyboardid.logitechgaming.build.pid=0xc335
+atmega32u4.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+atmega32u4.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
 
-##############################################################
+atmega32u4.menu.keyboardid.ms=Microsoft USB Keyboard
+atmega32u4.menu.keyboardid.ms.build.vid=0x045e
+atmega32u4.menu.keyboardid.ms.build.pid=0xfff8
+atmega32u4.menu.keyboardid.ms.build.usb_product=USB Keyboard
+atmega32u4.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
 
-diecimila.name=Arduino Duemilanove or Diecimila
+# Protocol #
+atmega32u4.menu.protocol.auto=Auto (I2C & Serial)
+atmega32u4.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
-diecimila.upload.tool=avrdude
-diecimila.upload.protocol=arduino
+atmega32u4.menu.protocol.i2c=I2C
+atmega32u4.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
-diecimila.bootloader.tool=avrdude
-diecimila.bootloader.low_fuses=0xFF
-diecimila.bootloader.unlock_bits=0x3F
-diecimila.bootloader.lock_bits=0x0F
+atmega32u4.menu.protocol.serial=Serial
+atmega32u4.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
 
-diecimila.build.f_cpu=16000000L
-diecimila.build.board=AVR_DUEMILANOVE
-diecimila.build.core=arduino
-diecimila.build.variant=standard
+# Debug #
+atmega32u4.menu.debug.serial=Serial (115200b, newline)
+atmega32u4.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
 
-## Arduino Duemilanove or Diecimila w/ ATmega328P
-## ----------------------------------------------
-diecimila.menu.cpu.atmega328=ATmega328P
+atmega32u4.menu.debug.disabled=Disabled
+atmega32u4.menu.debug.disabled.build.debug_flags=
 
-diecimila.menu.cpu.atmega328.upload.maximum_size=30720
-diecimila.menu.cpu.atmega328.upload.maximum_data_size=2048
-diecimila.menu.cpu.atmega328.upload.speed=57600
+# LED #
+atmega32u4.menu.ledpin.disabled=Disabled
+atmega32u4.menu.ledpin.0=0 (RX Serial) [PD2]
+atmega32u4.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=0
+atmega32u4.menu.ledpin.1=1 (TX Serial) [PD3]
+atmega32u4.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=1
+atmega32u4.menu.ledpin.2=2 (SDA I2C) [PD1]
+atmega32u4.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=2
+atmega32u4.menu.ledpin.3=3 (SCL I2C) [PD0]
+atmega32u4.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=3
+atmega32u4.menu.ledpin.4=4 (A6) [PD4]
+atmega32u4.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=4
+atmega32u4.menu.ledpin.5=5 [PC6]
+atmega32u4.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=5
+atmega32u4.menu.ledpin.6=6 (A7) [PD7]
+atmega32u4.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=6
+atmega32u4.menu.ledpin.7=7 [PE6]
+atmega32u4.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=7
+atmega32u4.menu.ledpin.8=8 (A8) [PB4]
+atmega32u4.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=8
+atmega32u4.menu.ledpin.9=9 (A9) [PB5]
+atmega32u4.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=9
+atmega32u4.menu.ledpin.10=10 (A10) [PB6]
+atmega32u4.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=10
+atmega32u4.menu.ledpin.11=11 [PB7]
+atmega32u4.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=11
+atmega32u4.menu.ledpin.12=12 (A11) [PD6]
+atmega32u4.menu.ledpin.12.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=12
+atmega32u4.menu.ledpin.13=13 [PC7]
+atmega32u4.menu.ledpin.13.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=13
+atmega32u4.menu.ledpin.14=14 (MISO SPI) [PB3]
+atmega32u4.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=14
+atmega32u4.menu.ledpin.15=15 (SCLK SPI) [PB1]
+atmega32u4.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=15
+atmega32u4.menu.ledpin.16=16 (MOSI SPI) [PB2]
+atmega32u4.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=16
+atmega32u4.menu.ledpin.17=17 (SS SPI) [PB0]
+atmega32u4.menu.ledpin.17.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=17
+atmega32u4.menu.ledpin.18=18 (A0) [PF7]
+atmega32u4.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=18
+atmega32u4.menu.ledpin.19=19 (A1) [PF6]
+atmega32u4.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=19
+atmega32u4.menu.ledpin.20=20 (A2) [PF5]
+atmega32u4.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=20
+atmega32u4.menu.ledpin.21=21 (A3) [PF4]
+atmega32u4.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=21
+atmega32u4.menu.ledpin.22=22 (A4) [PF1]
+atmega32u4.menu.ledpin.22.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=22
+atmega32u4.menu.ledpin.23=23 (A5) [PF0]
+atmega32u4.menu.ledpin.23.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=23
 
-diecimila.menu.cpu.atmega328.bootloader.high_fuses=0xDA
-diecimila.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
-diecimila.menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
+# Serial Bridge #
+atmega32u4.menu.bridge.disabled=Disabled
+atmega32u4.menu.bridge.disabled.build.bridge_flags=
 
-diecimila.menu.cpu.atmega328.build.mcu=atmega328p
+atmega32u4.menu.bridge.serial1=Serial1
+atmega32u4.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
 
-## Arduino Duemilanove or Diecimila w/ ATmega168
-## ---------------------------------------------
-diecimila.menu.cpu.atmega168=ATmega168
+atmega32u4.menu.bridgebutton.disabled=Disabled
+atmega32u4.menu.bridgebutton.2=2 (SDA I2C) [PD1]
+atmega32u4.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+atmega32u4.menu.bridgebutton.3=3 (SCL I2C) [PD0]
+atmega32u4.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+atmega32u4.menu.bridgebutton.4=4 (A6) [PD4]
+atmega32u4.menu.bridgebutton.4.build.bridge_button=-DBRIDGE_SWITCH=4
+atmega32u4.menu.bridgebutton.5=5 [PC6]
+atmega32u4.menu.bridgebutton.5.build.bridge_button=-DBRIDGE_SWITCH=5
+atmega32u4.menu.bridgebutton.6=6 (A7) [PD7]
+atmega32u4.menu.bridgebutton.6.build.bridge_button=-DBRIDGE_SWITCH=6
+atmega32u4.menu.bridgebutton.7=7 [PE6]
+atmega32u4.menu.bridgebutton.7.build.bridge_button=-DBRIDGE_SWITCH=7
+atmega32u4.menu.bridgebutton.8=8 (A8) [PB4]
+atmega32u4.menu.bridgebutton.8.build.bridge_button=-DBRIDGE_SWITCH=8
+atmega32u4.menu.bridgebutton.9=9 (A9) [PB5]
+atmega32u4.menu.bridgebutton.9.build.bridge_button=-DBRIDGE_SWITCH=9
+atmega32u4.menu.bridgebutton.10=10 (A10) [PB6]
+atmega32u4.menu.bridgebutton.10.build.bridge_button=-DBRIDGE_SWITCH=10
+atmega32u4.menu.bridgebutton.11=11 [PB7]
+atmega32u4.menu.bridgebutton.11.build.bridge_button=-DBRIDGE_SWITCH=11
+atmega32u4.menu.bridgebutton.12=12 (A11) [PD6]
+atmega32u4.menu.bridgebutton.12.build.bridge_button=-DBRIDGE_SWITCH=12
+atmega32u4.menu.bridgebutton.13=13 [PC7]
+atmega32u4.menu.bridgebutton.13.build.bridge_button=-DBRIDGE_SWITCH=13
+atmega32u4.menu.bridgebutton.14=14 (MISO SPI) [PB3]
+atmega32u4.menu.bridgebutton.14.build.bridge_button=-DBRIDGE_SWITCH=14
+atmega32u4.menu.bridgebutton.15=15 (SCLK SPI) [PB1]
+atmega32u4.menu.bridgebutton.15.build.bridge_button=-DBRIDGE_SWITCH=15
+atmega32u4.menu.bridgebutton.16=16 (MOSI SPI) [PB2]
+atmega32u4.menu.bridgebutton.16.build.bridge_button=-DBRIDGE_SWITCH=16
+atmega32u4.menu.bridgebutton.17=17 (SS SPI) [PB0]
+atmega32u4.menu.bridgebutton.17.build.bridge_button=-DBRIDGE_SWITCH=17
+atmega32u4.menu.bridgebutton.18=18 (A0) [PF7]
+atmega32u4.menu.bridgebutton.18.build.bridge_button=-DBRIDGE_SWITCH=18
+atmega32u4.menu.bridgebutton.19=19 (A1) [PF6]
+atmega32u4.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+atmega32u4.menu.bridgebutton.20=20 (A2) [PF5]
+atmega32u4.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+atmega32u4.menu.bridgebutton.21=21 (A3) [PF4]
+atmega32u4.menu.bridgebutton.21.build.bridge_button=-DBRIDGE_SWITCH=21
+atmega32u4.menu.bridgebutton.22=22 (A4) [PF1]
+atmega32u4.menu.bridgebutton.22.build.bridge_button=-DBRIDGE_SWITCH=22
+atmega32u4.menu.bridgebutton.23=23 (A5) [PF0]
+atmega32u4.menu.bridgebutton.23.build.bridge_button=-DBRIDGE_SWITCH=23
 
-diecimila.menu.cpu.atmega168.upload.maximum_size=14336
-diecimila.menu.cpu.atmega168.upload.maximum_data_size=1024
-diecimila.menu.cpu.atmega168.upload.speed=19200
+atmega32u4.menu.bridgerst.disabled=Disabled
+atmega32u4.menu.bridgerst.2=2 (SDA I2C) [PD1]
+atmega32u4.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+atmega32u4.menu.bridgerst.3=3 (SCL I2C) [PD0]
+atmega32u4.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+atmega32u4.menu.bridgerst.4=4 (A6) [PD4]
+atmega32u4.menu.bridgerst.4.build.bridge_rst=-DBRIDGE_RST=4
+atmega32u4.menu.bridgerst.5=5 [PC6]
+atmega32u4.menu.bridgerst.5.build.bridge_rst=-DBRIDGE_RST=5
+atmega32u4.menu.bridgerst.6=6 (A7) [PD7]
+atmega32u4.menu.bridgerst.6.build.bridge_rst=-DBRIDGE_RST=6
+atmega32u4.menu.bridgerst.7=7 [PE6]
+atmega32u4.menu.bridgerst.7.build.bridge_rst=-DBRIDGE_RST=7
+atmega32u4.menu.bridgerst.8=8 (A8) [PB4]
+atmega32u4.menu.bridgerst.8.build.bridge_rst=-DBRIDGE_RST=8
+atmega32u4.menu.bridgerst.9=9 (A9) [PB5]
+atmega32u4.menu.bridgerst.9.build.bridge_rst=-DBRIDGE_RST=9
+atmega32u4.menu.bridgerst.10=10 (A10) [PB6]
+atmega32u4.menu.bridgerst.10.build.bridge_rst=-DBRIDGE_RST=10
+atmega32u4.menu.bridgerst.11=11 [PB7]
+atmega32u4.menu.bridgerst.11.build.bridge_rst=-DBRIDGE_RST=11
+atmega32u4.menu.bridgerst.12=12 (A11) [PD6]
+atmega32u4.menu.bridgerst.12.build.bridge_rst=-DBRIDGE_RST=12
+atmega32u4.menu.bridgerst.13=13 [PC7]
+atmega32u4.menu.bridgerst.13.build.bridge_rst=-DBRIDGE_RST=13
+atmega32u4.menu.bridgerst.14=14 (MISO SPI) [PB3]
+atmega32u4.menu.bridgerst.14.build.bridge_rst=-DBRIDGE_RST=14
+atmega32u4.menu.bridgerst.15=15 (SCLK SPI) [PB1]
+atmega32u4.menu.bridgerst.15.build.bridge_rst=-DBRIDGE_RST=15
+atmega32u4.menu.bridgerst.16=16 (MOSI SPI) [PB2]
+atmega32u4.menu.bridgerst.16.build.bridge_rst=-DBRIDGE_RST=16
+atmega32u4.menu.bridgerst.17=17 (SS SPI) [PB0]
+atmega32u4.menu.bridgerst.17.build.bridge_rst=-DBRIDGE_RST=17
+atmega32u4.menu.bridgerst.18=18 (A0) [PF7]
+atmega32u4.menu.bridgerst.18.build.bridge_rst=-DBRIDGE_RST=18
+atmega32u4.menu.bridgerst.19=19 (A1) [PF6]
+atmega32u4.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+atmega32u4.menu.bridgerst.20=20 (A2) [PF5]
+atmega32u4.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+atmega32u4.menu.bridgerst.21=21 (A3) [PF4]
+atmega32u4.menu.bridgerst.21.build.bridge_rst=-DBRIDGE_RST=21
+atmega32u4.menu.bridgerst.22=22 (A4) [PF1]
+atmega32u4.menu.bridgerst.22.build.bridge_rst=-DBRIDGE_RST=22
+atmega32u4.menu.bridgerst.23=23 (A5) [PF0]
+atmega32u4.menu.bridgerst.23.build.bridge_rst=-DBRIDGE_RST=23
 
-diecimila.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-diecimila.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
-diecimila.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
+atmega32u4.menu.bridge0.disabled=Disabled
+atmega32u4.menu.bridge0.2=2 (SDA I2C) [PD1]
+atmega32u4.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+atmega32u4.menu.bridge0.3=3 (SCL I2C) [PD0]
+atmega32u4.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+atmega32u4.menu.bridge0.4=4 (A6) [PD4]
+atmega32u4.menu.bridge0.4.build.bridge_0=-DBRIDGE_0=4
+atmega32u4.menu.bridge0.5=5 [PC6]
+atmega32u4.menu.bridge0.5.build.bridge_0=-DBRIDGE_0=5
+atmega32u4.menu.bridge0.6=6 (A7) [PD7]
+atmega32u4.menu.bridge0.6.build.bridge_0=-DBRIDGE_0=6
+atmega32u4.menu.bridge0.7=7 [PE6]
+atmega32u4.menu.bridge0.7.build.bridge_0=-DBRIDGE_0=7
+atmega32u4.menu.bridge0.8=8 (A8) [PB4]
+atmega32u4.menu.bridge0.8.build.bridge_0=-DBRIDGE_0=8
+atmega32u4.menu.bridge0.9=9 (A9) [PB5]
+atmega32u4.menu.bridge0.9.build.bridge_0=-DBRIDGE_0=9
+atmega32u4.menu.bridge0.10=10 (A10) [PB6]
+atmega32u4.menu.bridge0.10.build.bridge_0=-DBRIDGE_0=10
+atmega32u4.menu.bridge0.11=11 [PB7]
+atmega32u4.menu.bridge0.11.build.bridge_0=-DBRIDGE_0=11
+atmega32u4.menu.bridge0.12=12 (A11) [PD6]
+atmega32u4.menu.bridge0.12.build.bridge_0=-DBRIDGE_0=12
+atmega32u4.menu.bridge0.13=13 [PC7]
+atmega32u4.menu.bridge0.13.build.bridge_0=-DBRIDGE_0=13
+atmega32u4.menu.bridge0.14=14 (MISO SPI) [PB3]
+atmega32u4.menu.bridge0.14.build.bridge_0=-DBRIDGE_0=14
+atmega32u4.menu.bridge0.15=15 (SCLK SPI) [PB1]
+atmega32u4.menu.bridge0.15.build.bridge_0=-DBRIDGE_0=15
+atmega32u4.menu.bridge0.16=16 (MOSI SPI) [PB2]
+atmega32u4.menu.bridge0.16.build.bridge_0=-DBRIDGE_0=16
+atmega32u4.menu.bridge0.17=17 (SS SPI) [PB0]
+atmega32u4.menu.bridge0.17.build.bridge_0=-DBRIDGE_0=17
+atmega32u4.menu.bridge0.18=18 (A0) [PF7]
+atmega32u4.menu.bridge0.18.build.bridge_0=-DBRIDGE_0=18
+atmega32u4.menu.bridge0.19=19 (A1) [PF6]
+atmega32u4.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+atmega32u4.menu.bridge0.20=20 (A2) [PF5]
+atmega32u4.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+atmega32u4.menu.bridge0.21=21 (A3) [PF4]
+atmega32u4.menu.bridge0.21.build.bridge_0=-DBRIDGE_0=21
+atmega32u4.menu.bridge0.22=22 (A4) [PF1]
+atmega32u4.menu.bridge0.22.build.bridge_0=-DBRIDGE_0=22
+atmega32u4.menu.bridge0.23=23 (A5) [PF0]
+atmega32u4.menu.bridge0.23.build.bridge_0=-DBRIDGE_0=23
 
-diecimila.menu.cpu.atmega168.build.mcu=atmega168
+########## DSTIKE WiFi Duck (ATmega32u4) ##########
 
-##############################################################
+dstike.name=DSTIKE WiFi Duck (ATmega32u4)
 
-nano.name=Arduino Nano
+dstike.upload.tool=avrdude
+dstike.upload.protocol=avr109
+dstike.upload.maximum_size=28672
+dstike.upload.maximum_data_size=2560
+dstike.upload.speed=57600
+dstike.upload.disable_flushing=true
+dstike.upload.use_1200bps_touch=true
+dstike.upload.wait_for_upload_port=true
 
-nano.upload.tool=avrdude
-nano.upload.protocol=arduino
+dstike.bootloader.tool=avrdude
+dstike.bootloader.unlock_bits=0x3F
+dstike.bootloader.lock_bits=0x2F
+dstike.bootloader.low_fuses=0xFF
+dstike.bootloader.high_fuses=0xD8
 
-nano.bootloader.tool=avrdude
-nano.bootloader.unlock_bits=0x3F
-nano.bootloader.lock_bits=0x0F
+dstike.build.board=AVR_ATMEGA32U4
+dstike.build.core=arduino
+dstike.build.mcu=atmega32u4
+dstike.build.variant=dstike
 
-nano.build.f_cpu=16000000L
-nano.build.board=AVR_NANO
-nano.build.core=arduino
-nano.build.variant=eightanaloginputs
+# CPU #
+dstike.build.f_cpu=16000000L
+dstike.bootloader.extended_fuses=0xCB
+dstike.bootloader.file=caterina/Caterina-promicro16.hex
 
-## Arduino Nano w/ ATmega328P
-## --------------------------
-nano.menu.cpu.atmega328=ATmega328P
+# Protocol #
+dstike.build.protocol_flags=-DENABLE_I2C
 
-nano.menu.cpu.atmega328.upload.maximum_size=30720
-nano.menu.cpu.atmega328.upload.maximum_data_size=2048
-nano.menu.cpu.atmega328.upload.speed=115200
+# LED #
+dstike.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=7
 
-nano.menu.cpu.atmega328.bootloader.low_fuses=0xFF
-nano.menu.cpu.atmega328.bootloader.high_fuses=0xDA
-nano.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
-nano.menu.cpu.atmega328.bootloader.file=optiboot/optiboot_atmega328.hex
+# Serial Bridge #
+dstike.build.bridge_flags=
 
-nano.menu.cpu.atmega328.build.mcu=atmega328p
+# Keyboard ID #
+dstike.menu.keyboardid.default=Arduino Leonardo
+dstike.menu.keyboardid.default.build.vid=0x2341
+dstike.menu.keyboardid.default.build.pid=0x8036
+dstike.menu.keyboardid.default.build.usb_product=Leonardo
+dstike.menu.keyboardid.default.build.usb_manufacturer=Arduino
 
-## Arduino Nano w/ ATmega328P (old bootloader)
-## --------------------------
-nano.menu.cpu.atmega328old=ATmega328P (Old Bootloader)
+dstike.menu.keyboardid.apple=Apple Aluminium Keyboard
+dstike.menu.keyboardid.apple.build.vid=0x05ac
+dstike.menu.keyboardid.apple.build.pid=0x0221
+dstike.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+dstike.menu.keyboardid.apple.build.usb_manufacturer=Apple
 
-nano.menu.cpu.atmega328old.upload.maximum_size=30720
-nano.menu.cpu.atmega328old.upload.maximum_data_size=2048
-nano.menu.cpu.atmega328old.upload.speed=57600
+dstike.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+dstike.menu.keyboardid.appleint.build.vid=0x05ac
+dstike.menu.keyboardid.appleint.build.pid=0x0259
+dstike.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+dstike.menu.keyboardid.appleint.build.usb_manufacturer=Apple
 
-nano.menu.cpu.atmega328old.bootloader.low_fuses=0xFF
-nano.menu.cpu.atmega328old.bootloader.high_fuses=0xDA
-nano.menu.cpu.atmega328old.bootloader.extended_fuses=0xFD
-nano.menu.cpu.atmega328old.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
+dstike.menu.keyboardid.logitechhid=Logitech USB Keyboard
+dstike.menu.keyboardid.logitechhid.build.vid=0x046d
+dstike.menu.keyboardid.logitechhid.build.pid=0xc316
+dstike.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+dstike.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
 
-nano.menu.cpu.atmega328old.build.mcu=atmega328p
+dstike.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+dstike.menu.keyboardid.logitechgaming.build.vid=0x046d
+dstike.menu.keyboardid.logitechgaming.build.pid=0xc335
+dstike.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+dstike.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
 
-## Arduino Nano w/ ATmega168
-## -------------------------
-nano.menu.cpu.atmega168=ATmega168
+dstike.menu.keyboardid.ms=Microsoft USB Keyboard
+dstike.menu.keyboardid.ms.build.vid=0x045e
+dstike.menu.keyboardid.ms.build.pid=0xfff8
+dstike.menu.keyboardid.ms.build.usb_product=USB Keyboard
+dstike.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
 
-nano.menu.cpu.atmega168.upload.maximum_size=14336
-nano.menu.cpu.atmega168.upload.maximum_data_size=1024
-nano.menu.cpu.atmega168.upload.speed=19200
+# Debug #
+dstike.menu.debug.serial=Serial (115200b, newline)
+dstike.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
 
-nano.menu.cpu.atmega168.bootloader.low_fuses=0xff
-nano.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-nano.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
-nano.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
+dstike.menu.debug.disabled=Disabled
+dstike.menu.debug.disabled.build.debug_flags=
 
-nano.menu.cpu.atmega168.build.mcu=atmega168
-
-##############################################################
-
-mega.name=Arduino Mega or Mega 2560
-
-mega.vid.0=0x2341
-mega.pid.0=0x0010
-mega.vid.1=0x2341
-mega.pid.1=0x0042
-mega.vid.2=0x2A03
-mega.pid.2=0x0010
-mega.vid.3=0x2A03
-mega.pid.3=0x0042
-mega.vid.4=0x2341
-mega.pid.4=0x0210
-mega.vid.5=0x2341
-mega.pid.5=0x0242
-
-mega.upload.tool=avrdude
-mega.upload.maximum_data_size=8192
-
-mega.bootloader.tool=avrdude
-mega.bootloader.low_fuses=0xFF
-mega.bootloader.unlock_bits=0x3F
-mega.bootloader.lock_bits=0x0F
-
-mega.build.f_cpu=16000000L
-mega.build.core=arduino
-mega.build.variant=mega
-# default board may be overridden by the cpu menu
-mega.build.board=AVR_MEGA2560
-
-## Arduino Mega w/ ATmega2560
-## -------------------------
-mega.menu.cpu.atmega2560=ATmega2560 (Mega 2560)
-
-mega.menu.cpu.atmega2560.upload.protocol=wiring
-mega.menu.cpu.atmega2560.upload.maximum_size=253952
-mega.menu.cpu.atmega2560.upload.speed=115200
-
-mega.menu.cpu.atmega2560.bootloader.high_fuses=0xD8
-mega.menu.cpu.atmega2560.bootloader.extended_fuses=0xFD
-mega.menu.cpu.atmega2560.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
-
-mega.menu.cpu.atmega2560.build.mcu=atmega2560
-mega.menu.cpu.atmega2560.build.board=AVR_MEGA2560
-
-## Arduino Mega w/ ATmega1280
-## -------------------------
-mega.menu.cpu.atmega1280=ATmega1280
-
-mega.menu.cpu.atmega1280.upload.protocol=arduino
-mega.menu.cpu.atmega1280.upload.maximum_size=126976
-mega.menu.cpu.atmega1280.upload.speed=57600
-
-mega.menu.cpu.atmega1280.bootloader.high_fuses=0xDA
-mega.menu.cpu.atmega1280.bootloader.extended_fuses=0xF5
-mega.menu.cpu.atmega1280.bootloader.file=atmega/ATmegaBOOT_168_atmega1280.hex
-
-mega.menu.cpu.atmega1280.build.mcu=atmega1280
-mega.menu.cpu.atmega1280.build.board=AVR_MEGA
-
-##############################################################
-
-megaADK.name=Arduino Mega ADK
-
-megaADK.vid.0=0x2341
-megaADK.pid.0=0x003f
-megaADK.vid.1=0x2341
-megaADK.pid.1=0x0044
-megaADK.vid.2=0x2A03
-megaADK.pid.2=0x003f
-megaADK.vid.3=0x2A03
-megaADK.pid.3=0x0044
-
-megaADK.upload.tool=avrdude
-megaADK.upload.protocol=wiring
-megaADK.upload.maximum_size=253952
-megaADK.upload.maximum_data_size=8192
-megaADK.upload.speed=115200
-
-megaADK.bootloader.tool=avrdude
-megaADK.bootloader.low_fuses=0xFF
-megaADK.bootloader.high_fuses=0xD8
-megaADK.bootloader.extended_fuses=0xFD
-megaADK.bootloader.file=stk500v2/stk500boot_v2_mega2560.hex
-megaADK.bootloader.unlock_bits=0x3F
-megaADK.bootloader.lock_bits=0x0F
-
-megaADK.build.mcu=atmega2560
-megaADK.build.f_cpu=16000000L
-megaADK.build.board=AVR_ADK
-megaADK.build.core=arduino
-megaADK.build.variant=mega
-
-##############################################################
+########## Arduino Leonardo ##########
 
 leonardo.name=Arduino Leonardo
-leonardo.vid.0=0x2341
-leonardo.pid.0=0x0036
-leonardo.vid.1=0x2341
-leonardo.pid.1=0x8036
-leonardo.vid.2=0x2A03
-leonardo.pid.2=0x0036
-leonardo.vid.3=0x2A03
-leonardo.pid.3=0x8036
 
 leonardo.upload.tool=avrdude
 leonardo.upload.protocol=avr109
@@ -299,74 +391,266 @@ leonardo.upload.use_1200bps_touch=true
 leonardo.upload.wait_for_upload_port=true
 
 leonardo.bootloader.tool=avrdude
-leonardo.bootloader.low_fuses=0xff
-leonardo.bootloader.high_fuses=0xd8
-leonardo.bootloader.extended_fuses=0xcb
-leonardo.bootloader.file=caterina/Caterina-Leonardo.hex
 leonardo.bootloader.unlock_bits=0x3F
 leonardo.bootloader.lock_bits=0x2F
+leonardo.bootloader.low_fuses=0xFF
+leonardo.bootloader.high_fuses=0xD8
 
-leonardo.build.mcu=atmega32u4
-leonardo.build.f_cpu=16000000L
-leonardo.build.vid=0x2341
-leonardo.build.pid=0x8036
-leonardo.build.usb_product="Arduino Leonardo"
-leonardo.build.board=AVR_LEONARDO
+leonardo.build.board=AVR_ATMEGA32U4
 leonardo.build.core=arduino
+leonardo.build.mcu=atmega32u4
 leonardo.build.variant=leonardo
-leonardo.build.extra_flags={build.usb_flags}
 
-##############################################################
+# CPU #
+leonardo.build.f_cpu=16000000L
+leonardo.bootloader.extended_fuses=0xCB
+leonardo.bootloader.file=caterina/Caterina-promicro16.hex
 
-leonardoeth.name=Arduino Leonardo ETH
-leonardoeth.vid.0=0x2a03
-leonardoeth.pid.0=0x0040
-leonardoeth.vid.1=0x2a03
-leonardoeth.pid.1=0x8040
+# Keyboard ID #
+leonardo.menu.keyboardid.default=Arduino Leonardo
+leonardo.menu.keyboardid.default.build.vid=0x2341
+leonardo.menu.keyboardid.default.build.pid=0x8036
+leonardo.menu.keyboardid.default.build.usb_product=Leonardo
+leonardo.menu.keyboardid.default.build.usb_manufacturer=Arduino
 
-leonardoeth.upload.tool=avrdude
-leonardoeth.upload.protocol=avr109
-leonardoeth.upload.maximum_size=28672
-leonardoeth.upload.maximum_data_size=2560
-leonardoeth.upload.speed=57600
-leonardoeth.upload.disable_flushing=true
-leonardoeth.upload.use_1200bps_touch=true
-leonardoeth.upload.wait_for_upload_port=true
+leonardo.menu.keyboardid.apple=Apple Aluminium Keyboard
+leonardo.menu.keyboardid.apple.build.vid=0x05ac
+leonardo.menu.keyboardid.apple.build.pid=0x0221
+leonardo.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+leonardo.menu.keyboardid.apple.build.usb_manufacturer=Apple
 
-leonardoeth.bootloader.tool=avrdude
-leonardoeth.bootloader.low_fuses=0xff
-leonardoeth.bootloader.high_fuses=0xd8
-leonardoeth.bootloader.extended_fuses=0xcb
-leonardoeth.bootloader.file=caterina/Caterina-LeonardoEthernet.hex
-leonardoeth.bootloader.unlock_bits=0x3F
-leonardoeth.bootloader.lock_bits=0x2F
+leonardo.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+leonardo.menu.keyboardid.appleint.build.vid=0x05ac
+leonardo.menu.keyboardid.appleint.build.pid=0x0259
+leonardo.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+leonardo.menu.keyboardid.appleint.build.usb_manufacturer=Apple
 
-leonardoeth.build.mcu=atmega32u4
-leonardoeth.build.f_cpu=16000000L
-leonardoeth.build.vid=0x2a03
-leonardoeth.build.pid=0x8040
-leonardoeth.build.usb_product="Arduino Leonardo ETH"
-leonardoeth.build.board=AVR_LEONARDO_ETH
-leonardoeth.build.core=arduino
-leonardoeth.build.variant=leonardo
-leonardoeth.build.extra_flags={build.usb_flags}
+leonardo.menu.keyboardid.logitechhid=Logitech USB Keyboard
+leonardo.menu.keyboardid.logitechhid.build.vid=0x046d
+leonardo.menu.keyboardid.logitechhid.build.pid=0xc316
+leonardo.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+leonardo.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
 
-##############################################################
+leonardo.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+leonardo.menu.keyboardid.logitechgaming.build.vid=0x046d
+leonardo.menu.keyboardid.logitechgaming.build.pid=0xc335
+leonardo.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+leonardo.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
+
+leonardo.menu.keyboardid.ms=Microsoft USB Keyboard
+leonardo.menu.keyboardid.ms.build.vid=0x045e
+leonardo.menu.keyboardid.ms.build.pid=0xfff8
+leonardo.menu.keyboardid.ms.build.usb_product=USB Keyboard
+leonardo.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
+
+# Protocol #
+leonardo.menu.protocol.auto=Auto (I2C & Serial)
+leonardo.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
+
+leonardo.menu.protocol.i2c=I2C
+leonardo.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
+
+leonardo.menu.protocol.serial=Serial
+leonardo.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+# Debug #
+leonardo.menu.debug.serial=Serial (115200b, newline)
+leonardo.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+leonardo.menu.debug.disabled=Disabled
+leonardo.menu.debug.disabled.build.debug_flags=
+
+# LED #
+leonardo.menu.ledpin.disabled=Disabled
+leonardo.menu.ledpin.0=0 (RX Serial)
+leonardo.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=0
+leonardo.menu.ledpin.1=1 (TX Serial)
+leonardo.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=1
+leonardo.menu.ledpin.2=2 (SDA I2C)
+leonardo.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=2
+leonardo.menu.ledpin.3=3 (SCL I2C)
+leonardo.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=3
+leonardo.menu.ledpin.4=4
+leonardo.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=4
+leonardo.menu.ledpin.5=~5
+leonardo.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=5
+leonardo.menu.ledpin.6=~6
+leonardo.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=6
+leonardo.menu.ledpin.7=7
+leonardo.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=7
+leonardo.menu.ledpin.8=8
+leonardo.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=8
+leonardo.menu.ledpin.9=~9
+leonardo.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=9
+leonardo.menu.ledpin.10=~10
+leonardo.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=10
+leonardo.menu.ledpin.11=~11
+leonardo.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=11
+leonardo.menu.ledpin.12=~12
+leonardo.menu.ledpin.12.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=12
+leonardo.menu.ledpin.13=~13
+leonardo.menu.ledpin.13.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=13
+leonardo.menu.ledpin.14=ICSP MISO (SPI)
+leonardo.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=14
+leonardo.menu.ledpin.15=ICSP SCLK (SPI)
+leonardo.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=15
+leonardo.menu.ledpin.16=ICSP MOSI (SPI)
+leonardo.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=16
+leonardo.menu.ledpin.18=A0
+leonardo.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=18
+leonardo.menu.ledpin.19=A1
+leonardo.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=19
+leonardo.menu.ledpin.20=A2
+leonardo.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=20
+leonardo.menu.ledpin.21=A3
+leonardo.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=21
+leonardo.menu.ledpin.22=A4
+leonardo.menu.ledpin.22.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=22
+leonardo.menu.ledpin.23=A5
+leonardo.menu.ledpin.23.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=23
+
+# Serial Bridge #
+leonardo.menu.bridge.disabled=Disabled
+leonardo.menu.bridge.disabled.build.bridge_flags=
+
+leonardo.menu.bridge.serial1=Serial1
+leonardo.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+
+leonardo.menu.bridgebutton.disabled=Disabled
+leonardo.menu.bridgebutton.2=2 (SDA I2C)
+leonardo.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+leonardo.menu.bridgebutton.3=3 (SCL I2C)
+leonardo.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+leonardo.menu.bridgebutton.4=4
+leonardo.menu.bridgebutton.4.build.bridge_button=-DBRIDGE_SWITCH=4
+leonardo.menu.bridgebutton.5=~5
+leonardo.menu.bridgebutton.5.build.bridge_button=-DBRIDGE_SWITCH=5
+leonardo.menu.bridgebutton.6=~6
+leonardo.menu.bridgebutton.6.build.bridge_button=-DBRIDGE_SWITCH=6
+leonardo.menu.bridgebutton.7=7
+leonardo.menu.bridgebutton.7.build.bridge_button=-DBRIDGE_SWITCH=7
+leonardo.menu.bridgebutton.8=8
+leonardo.menu.bridgebutton.8.build.bridge_button=-DBRIDGE_SWITCH=8
+leonardo.menu.bridgebutton.9=~9
+leonardo.menu.bridgebutton.9.build.bridge_button=-DBRIDGE_SWITCH=9
+leonardo.menu.bridgebutton.10=~10
+leonardo.menu.bridgebutton.10.build.bridge_button=-DBRIDGE_SWITCH=10
+leonardo.menu.bridgebutton.11=~11
+leonardo.menu.bridgebutton.11.build.bridge_button=-DBRIDGE_SWITCH=11
+leonardo.menu.bridgebutton.12=~12
+leonardo.menu.bridgebutton.12.build.bridge_button=-DBRIDGE_SWITCH=12
+leonardo.menu.bridgebutton.13=~13
+leonardo.menu.bridgebutton.13.build.bridge_button=-DBRIDGE_SWITCH=13
+leonardo.menu.bridgebutton.14=ICSP MISO (SPI)
+leonardo.menu.bridgebutton.14.build.bridge_button=-DBRIDGE_SWITCH=14
+leonardo.menu.bridgebutton.15=ICSP SCLK (SPI)
+leonardo.menu.bridgebutton.15.build.bridge_button=-DBRIDGE_SWITCH=15
+leonardo.menu.bridgebutton.16=ICSP MOSI (SPI)
+leonardo.menu.bridgebutton.16.build.bridge_button=-DBRIDGE_SWITCH=16
+leonardo.menu.bridgebutton.18=A0
+leonardo.menu.bridgebutton.18.build.bridge_button=-DBRIDGE_SWITCH=18
+leonardo.menu.bridgebutton.19=A1
+leonardo.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+leonardo.menu.bridgebutton.20=A2
+leonardo.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+leonardo.menu.bridgebutton.21=A3
+leonardo.menu.bridgebutton.21.build.bridge_button=-DBRIDGE_SWITCH=21
+leonardo.menu.bridgebutton.22=A4
+leonardo.menu.bridgebutton.22.build.bridge_button=-DBRIDGE_SWITCH=22
+leonardo.menu.bridgebutton.23=A5
+leonardo.menu.bridgebutton.23.build.bridge_button=-DBRIDGE_SWITCH=23
+
+leonardo.menu.bridgerst.disabled=Disabled
+leonardo.menu.bridgerst.2=2 (SDA I2C)
+leonardo.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+leonardo.menu.bridgerst.3=3 (SCL I2C)
+leonardo.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+leonardo.menu.bridgerst.4=4
+leonardo.menu.bridgerst.4.build.bridge_rst=-DBRIDGE_RST=4
+leonardo.menu.bridgerst.5=~5
+leonardo.menu.bridgerst.5.build.bridge_rst=-DBRIDGE_RST=5
+leonardo.menu.bridgerst.6=~6
+leonardo.menu.bridgerst.6.build.bridge_rst=-DBRIDGE_RST=6
+leonardo.menu.bridgerst.7=7
+leonardo.menu.bridgerst.7.build.bridge_rst=-DBRIDGE_RST=7
+leonardo.menu.bridgerst.8=8
+leonardo.menu.bridgerst.8.build.bridge_rst=-DBRIDGE_RST=8
+leonardo.menu.bridgerst.9=~9
+leonardo.menu.bridgerst.9.build.bridge_rst=-DBRIDGE_RST=9
+leonardo.menu.bridgerst.10=~10
+leonardo.menu.bridgerst.10.build.bridge_rst=-DBRIDGE_RST=10
+leonardo.menu.bridgerst.11=~11
+leonardo.menu.bridgerst.11.build.bridge_rst=-DBRIDGE_RST=11
+leonardo.menu.bridgerst.12=~12
+leonardo.menu.bridgerst.12.build.bridge_rst=-DBRIDGE_RST=12
+leonardo.menu.bridgerst.13=~13
+leonardo.menu.bridgerst.13.build.bridge_rst=-DBRIDGE_RST=13
+leonardo.menu.bridgerst.14=ICSP MISO (SPI)
+leonardo.menu.bridgerst.14.build.bridge_rst=-DBRIDGE_RST=14
+leonardo.menu.bridgerst.15=ICSP SCLK (SPI)
+leonardo.menu.bridgerst.15.build.bridge_rst=-DBRIDGE_RST=15
+leonardo.menu.bridgerst.16=ICSP MOSI (SPI)
+leonardo.menu.bridgerst.16.build.bridge_rst=-DBRIDGE_RST=16
+leonardo.menu.bridgerst.18=A0
+leonardo.menu.bridgerst.18.build.bridge_rst=-DBRIDGE_RST=18
+leonardo.menu.bridgerst.19=A1
+leonardo.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+leonardo.menu.bridgerst.20=A2
+leonardo.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+leonardo.menu.bridgerst.21=A3
+leonardo.menu.bridgerst.21.build.bridge_rst=-DBRIDGE_RST=21
+leonardo.menu.bridgerst.22=A4
+leonardo.menu.bridgerst.22.build.bridge_rst=-DBRIDGE_RST=22
+leonardo.menu.bridgerst.23=A5
+leonardo.menu.bridgerst.23.build.bridge_rst=-DBRIDGE_RST=23
+
+leonardo.menu.bridge0.disabled=Disabled
+leonardo.menu.bridge0.2=2 (SDA I2C)
+leonardo.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+leonardo.menu.bridge0.3=3 (SCL I2C)
+leonardo.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+leonardo.menu.bridge0.4=4
+leonardo.menu.bridge0.4.build.bridge_0=-DBRIDGE_0=4
+leonardo.menu.bridge0.5=~5
+leonardo.menu.bridge0.5.build.bridge_0=-DBRIDGE_0=5
+leonardo.menu.bridge0.6=~6
+leonardo.menu.bridge0.6.build.bridge_0=-DBRIDGE_0=6
+leonardo.menu.bridge0.7=7
+leonardo.menu.bridge0.7.build.bridge_0=-DBRIDGE_0=7
+leonardo.menu.bridge0.8=8
+leonardo.menu.bridge0.8.build.bridge_0=-DBRIDGE_0=8
+leonardo.menu.bridge0.9=~9
+leonardo.menu.bridge0.9.build.bridge_0=-DBRIDGE_0=9
+leonardo.menu.bridge0.10=~10
+leonardo.menu.bridge0.10.build.bridge_0=-DBRIDGE_0=10
+leonardo.menu.bridge0.11=~11
+leonardo.menu.bridge0.11.build.bridge_0=-DBRIDGE_0=11
+leonardo.menu.bridge0.12=~12
+leonardo.menu.bridge0.12.build.bridge_0=-DBRIDGE_0=12
+leonardo.menu.bridge0.13=~13
+leonardo.menu.bridge0.13.build.bridge_0=-DBRIDGE_0=13
+leonardo.menu.bridge0.14=ICSP MISO (SPI)
+leonardo.menu.bridge0.14.build.bridge_0=-DBRIDGE_0=14
+leonardo.menu.bridge0.15=ICSP SCLK (SPI)
+leonardo.menu.bridge0.15.build.bridge_0=-DBRIDGE_0=15
+leonardo.menu.bridge0.16=ICSP MOSI (SPI)
+leonardo.menu.bridge0.16.build.bridge_0=-DBRIDGE_0=16
+leonardo.menu.bridge0.18=A0
+leonardo.menu.bridge0.18.build.bridge_0=-DBRIDGE_0=18
+leonardo.menu.bridge0.19=A1
+leonardo.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+leonardo.menu.bridge0.20=A2
+leonardo.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+leonardo.menu.bridge0.21=A3
+leonardo.menu.bridge0.21.build.bridge_0=-DBRIDGE_0=21
+leonardo.menu.bridge0.22=A4
+leonardo.menu.bridge0.22.build.bridge_0=-DBRIDGE_0=22
+leonardo.menu.bridge0.23=A5
+leonardo.menu.bridge0.23.build.bridge_0=-DBRIDGE_0=23
+
+########## Arduino Micro ##########
 
 micro.name=Arduino Micro
-
-micro.vid.0=0x2341
-micro.pid.0=0x0037
-micro.vid.1=0x2341
-micro.pid.1=0x8037
-micro.vid.2=0x2A03
-micro.pid.2=0x0037
-micro.vid.3=0x2A03
-micro.pid.3=0x8037
-micro.vid.4=0x2341
-micro.pid.4=0x0237
-micro.vid.5=0x2341
-micro.pid.5=0x8237
 
 micro.upload.tool=avrdude
 micro.upload.protocol=avr109
@@ -378,677 +662,895 @@ micro.upload.use_1200bps_touch=true
 micro.upload.wait_for_upload_port=true
 
 micro.bootloader.tool=avrdude
-micro.bootloader.low_fuses=0xff
-micro.bootloader.high_fuses=0xd8
-micro.bootloader.extended_fuses=0xcb
-micro.bootloader.file=caterina/Caterina-Micro.hex
 micro.bootloader.unlock_bits=0x3F
 micro.bootloader.lock_bits=0x2F
+micro.bootloader.low_fuses=0xFF
+micro.bootloader.high_fuses=0xD8
 
-micro.build.mcu=atmega32u4
-micro.build.f_cpu=16000000L
-micro.build.vid=0x2341
-micro.build.pid=0x8037
-micro.build.usb_product="Arduino Micro"
-micro.build.board=AVR_MICRO
+micro.build.board=AVR_ATMEGA32U4
 micro.build.core=arduino
+micro.build.mcu=atmega32u4
 micro.build.variant=micro
-micro.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-esplora.name=Arduino Esplora
-esplora.vid.0=0x2341
-esplora.pid.0=0x003C
-esplora.vid.1=0x2341
-esplora.pid.1=0x803C
-esplora.vid.2=0x2A03
-esplora.pid.2=0x003C
-esplora.vid.3=0x2A03
-esplora.pid.3=0x803C
-
-esplora.upload.tool=avrdude
-esplora.upload.protocol=avr109
-esplora.upload.maximum_size=28672
-esplora.upload.maximum_data_size=2560
-esplora.upload.speed=57600
-esplora.upload.disable_flushing=true
-esplora.upload.use_1200bps_touch=true
-esplora.upload.wait_for_upload_port=true
-
-esplora.bootloader.tool=avrdude
-esplora.bootloader.low_fuses=0xff
-esplora.bootloader.high_fuses=0xd8
-esplora.bootloader.extended_fuses=0xcb
-esplora.bootloader.file=caterina/Caterina-Esplora.hex
-esplora.bootloader.unlock_bits=0x3F
-esplora.bootloader.lock_bits=0x2F
-
-esplora.build.mcu=atmega32u4
-esplora.build.f_cpu=16000000L
-esplora.build.vid=0x2341
-esplora.build.pid=0x803c
-esplora.build.usb_product="Arduino Esplora"
-esplora.build.board=AVR_ESPLORA
-esplora.build.core=arduino
-esplora.build.variant=leonardo
-esplora.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-mini.name=Arduino Mini
-
-mini.upload.tool=avrdude
-mini.upload.protocol=arduino
-
-mini.bootloader.tool=avrdude
-mini.bootloader.low_fuses=0xff
-mini.bootloader.unlock_bits=0x3F
-mini.bootloader.lock_bits=0x0F
-
-mini.build.f_cpu=16000000L
-mini.build.board=AVR_MINI
-mini.build.core=arduino
-mini.build.variant=eightanaloginputs
-
-## Arduino Mini w/ ATmega328P
-## --------------------------
-mini.menu.cpu.atmega328=ATmega328P
-
-mini.menu.cpu.atmega328.upload.maximum_size=28672
-mini.menu.cpu.atmega328.upload.maximum_data_size=2048
-mini.menu.cpu.atmega328.upload.speed=115200
-
-mini.menu.cpu.atmega328.bootloader.high_fuses=0xd8
-mini.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
-mini.menu.cpu.atmega328.bootloader.file=optiboot/optiboot_atmega328-Mini.hex
-
-mini.menu.cpu.atmega328.build.mcu=atmega328p
-
-## Arduino Mini w/ ATmega168
-## -------------------------
-mini.menu.cpu.atmega168=ATmega168
-
-mini.menu.cpu.atmega168.upload.maximum_size=14336
-mini.menu.cpu.atmega168.upload.maximum_data_size=1024
-mini.menu.cpu.atmega168.upload.speed=19200
-
-mini.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-mini.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
-mini.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_ng.hex
-
-mini.menu.cpu.atmega168.build.mcu=atmega168
-
-##############################################################
-
-ethernet.name=Arduino Ethernet
-
-ethernet.upload.tool=avrdude
-ethernet.upload.protocol=arduino
-ethernet.upload.maximum_size=32256
-ethernet.upload.maximum_data_size=2048
-ethernet.upload.speed=115200
-
-ethernet.bootloader.tool=avrdude
-ethernet.bootloader.low_fuses=0xff
-ethernet.bootloader.high_fuses=0xde
-ethernet.bootloader.extended_fuses=0xFD
-ethernet.bootloader.file=optiboot/optiboot_atmega328.hex
-ethernet.bootloader.unlock_bits=0x3F
-ethernet.bootloader.lock_bits=0x0F
-
-ethernet.build.variant=ethernet
-ethernet.build.mcu=atmega328p
-ethernet.build.f_cpu=16000000L
-ethernet.build.board=AVR_ETHERNET
-ethernet.build.core=arduino
-
-##############################################################
-
-fio.name=Arduino Fio
-
-fio.upload.tool=avrdude
-fio.upload.protocol=arduino
-fio.upload.maximum_size=30720
-fio.upload.maximum_data_size=2048
-fio.upload.speed=57600
-
-fio.bootloader.tool=avrdude
-fio.bootloader.low_fuses=0xFF
-fio.bootloader.high_fuses=0xDA
-fio.bootloader.extended_fuses=0xFD
-fio.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
-fio.bootloader.unlock_bits=0x3F
-fio.bootloader.lock_bits=0x0F
-
-fio.build.mcu=atmega328p
-fio.build.f_cpu=8000000L
-fio.build.board=AVR_FIO
-fio.build.core=arduino
-fio.build.variant=eightanaloginputs
-
-##############################################################
-
-bt.name=Arduino BT
-
-bt.upload.tool=avrdude
-bt.upload.protocol=arduino
-bt.upload.speed=19200
-bt.upload.disable_flushing=true
-
-bt.bootloader.tool=avrdude
-bt.bootloader.low_fuses=0xff
-bt.bootloader.unlock_bits=0x3F
-bt.bootloader.lock_bits=0x0F
-
-bt.build.f_cpu=16000000L
-bt.build.board=AVR_BT
-bt.build.core=arduino
-bt.build.variant=eightanaloginputs
-
-## Arduino BT w/ ATmega328P
-## ------------------------
-bt.menu.cpu.atmega328=ATmega328P
-bt.menu.cpu.atmega328.upload.maximum_size=28672
-bt.menu.cpu.atmega328.upload.maximum_data_size=2048
-
-bt.menu.cpu.atmega328.bootloader.high_fuses=0xd8
-bt.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
-bt.menu.cpu.atmega328.bootloader.file=bt/ATmegaBOOT_168_atmega328_bt.hex
-
-bt.menu.cpu.atmega328.build.mcu=atmega328p
-
-## Arduino BT w/ ATmega168
-## -----------------------
-bt.menu.cpu.atmega168=ATmega168
-bt.menu.cpu.atmega168.upload.maximum_size=14336
-bt.menu.cpu.atmega168.upload.maximum_data_size=1024
-
-bt.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-bt.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
-bt.menu.cpu.atmega168.bootloader.file=bt/ATmegaBOOT_168.hex
-
-bt.menu.cpu.atmega168.build.mcu=atmega168
-
-##############################################################
-
-LilyPadUSB.name=LilyPad Arduino USB
-LilyPadUSB.vid.0=0x1B4F
-LilyPadUSB.pid.0=0x9207
-LilyPadUSB.vid.1=0x1B4F
-LilyPadUSB.pid.1=0x9208
-
-LilyPadUSB.upload.tool=avrdude
-LilyPadUSB.upload.protocol=avr109
-LilyPadUSB.upload.maximum_size=28672
-LilyPadUSB.upload.maximum_data_size=2560
-LilyPadUSB.upload.speed=57600
-LilyPadUSB.upload.disable_flushing=true
-LilyPadUSB.upload.use_1200bps_touch=true
-LilyPadUSB.upload.wait_for_upload_port=true
-
-LilyPadUSB.bootloader.tool=avrdude
-LilyPadUSB.bootloader.low_fuses=0xff
-LilyPadUSB.bootloader.high_fuses=0xd8
-LilyPadUSB.bootloader.extended_fuses=0xce
-LilyPadUSB.bootloader.file=caterina-LilyPadUSB/Caterina-LilyPadUSB.hex
-LilyPadUSB.bootloader.unlock_bits=0x3F
-LilyPadUSB.bootloader.lock_bits=0x2F
-
-LilyPadUSB.build.mcu=atmega32u4
-LilyPadUSB.build.f_cpu=8000000L
-LilyPadUSB.build.vid=0x1B4F
-LilyPadUSB.build.pid=0x9208
-LilyPadUSB.build.usb_product="LilyPad USB"
-LilyPadUSB.build.board=AVR_LILYPAD_USB
-LilyPadUSB.build.core=arduino
-LilyPadUSB.build.variant=leonardo
-LilyPadUSB.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-lilypad.name=LilyPad Arduino
-
-lilypad.upload.tool=avrdude
-lilypad.upload.protocol=arduino
-
-lilypad.bootloader.tool=avrdude
-lilypad.bootloader.unlock_bits=0x3F
-lilypad.bootloader.lock_bits=0x0F
-
-lilypad.build.f_cpu=8000000L
-lilypad.build.board=AVR_LILYPAD
-lilypad.build.core=arduino
-lilypad.build.variant=standard
-
-## LilyPad Arduino w/ ATmega328P
-## -----------------------------
-lilypad.menu.cpu.atmega328=ATmega328P
-
-lilypad.menu.cpu.atmega328.upload.maximum_size=30720
-lilypad.menu.cpu.atmega328.upload.maximum_data_size=2048
-lilypad.menu.cpu.atmega328.upload.speed=57600
-
-lilypad.menu.cpu.atmega328.bootloader.low_fuses=0xFF
-lilypad.menu.cpu.atmega328.bootloader.high_fuses=0xDA
-lilypad.menu.cpu.atmega328.bootloader.extended_fuses=0xFD
-lilypad.menu.cpu.atmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
-
-lilypad.menu.cpu.atmega328.build.mcu=atmega328p
-
-## LilyPad Arduino w/ ATmega168
-## ----------------------------
-lilypad.menu.cpu.atmega168=ATmega168
-
-lilypad.menu.cpu.atmega168.upload.maximum_size=14336
-lilypad.menu.cpu.atmega168.upload.maximum_data_size=1024
-lilypad.menu.cpu.atmega168.upload.speed=19200
-
-lilypad.menu.cpu.atmega168.bootloader.low_fuses=0xe2
-lilypad.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-lilypad.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
-lilypad.menu.cpu.atmega168.bootloader.file=lilypad/LilyPadBOOT_168.hex
-
-lilypad.menu.cpu.atmega168.build.mcu=atmega168
-
-##############################################################
-
-pro.name=Arduino Pro or Pro Mini
-
-pro.upload.tool=avrdude
-pro.upload.protocol=arduino
-
-pro.bootloader.tool=avrdude
-pro.bootloader.unlock_bits=0x3F
-pro.bootloader.lock_bits=0x0F
-
-pro.build.board=AVR_PRO
-pro.build.core=arduino
-pro.build.variant=eightanaloginputs
-
-## Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega328P
-## --------------------------------------------------
-pro.menu.cpu.16MHzatmega328=ATmega328P (5V, 16 MHz)
-
-pro.menu.cpu.16MHzatmega328.upload.maximum_size=30720
-pro.menu.cpu.16MHzatmega328.upload.maximum_data_size=2048
-pro.menu.cpu.16MHzatmega328.upload.speed=57600
-
-pro.menu.cpu.16MHzatmega328.bootloader.low_fuses=0xFF
-pro.menu.cpu.16MHzatmega328.bootloader.high_fuses=0xDA
-pro.menu.cpu.16MHzatmega328.bootloader.extended_fuses=0xFD
-pro.menu.cpu.16MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328.hex
-
-pro.menu.cpu.16MHzatmega328.build.mcu=atmega328p
-pro.menu.cpu.16MHzatmega328.build.f_cpu=16000000L
-
-## Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega328P
-## ---------------------------------------------------
-pro.menu.cpu.8MHzatmega328=ATmega328P (3.3V, 8 MHz)
-
-pro.menu.cpu.8MHzatmega328.upload.maximum_size=30720
-pro.menu.cpu.8MHzatmega328.upload.maximum_data_size=2048
-pro.menu.cpu.8MHzatmega328.upload.speed=57600
-
-pro.menu.cpu.8MHzatmega328.bootloader.low_fuses=0xFF
-pro.menu.cpu.8MHzatmega328.bootloader.high_fuses=0xDA
-pro.menu.cpu.8MHzatmega328.bootloader.extended_fuses=0xFD
-pro.menu.cpu.8MHzatmega328.bootloader.file=atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
-
-pro.menu.cpu.8MHzatmega328.build.mcu=atmega328p
-pro.menu.cpu.8MHzatmega328.build.f_cpu=8000000L
-
-## Arduino Pro or Pro Mini (5V, 16 MHz) w/ ATmega168
-## -------------------------------------------------
-pro.menu.cpu.16MHzatmega168=ATmega168 (5V, 16 MHz)
-
-pro.menu.cpu.16MHzatmega168.upload.maximum_size=14336
-pro.menu.cpu.16MHzatmega168.upload.maximum_data_size=1024
-pro.menu.cpu.16MHzatmega168.upload.speed=19200
-
-pro.menu.cpu.16MHzatmega168.bootloader.low_fuses=0xff
-pro.menu.cpu.16MHzatmega168.bootloader.high_fuses=0xdd
-pro.menu.cpu.16MHzatmega168.bootloader.extended_fuses=0xF8
-pro.menu.cpu.16MHzatmega168.bootloader.file=atmega/ATmegaBOOT_168_diecimila.hex
-
-pro.menu.cpu.16MHzatmega168.build.mcu=atmega168
-pro.menu.cpu.16MHzatmega168.build.f_cpu=16000000L
-
-## Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega168
-## --------------------------------------------------
-pro.menu.cpu.8MHzatmega168=ATmega168 (3.3V, 8 MHz)
-
-pro.menu.cpu.8MHzatmega168.upload.maximum_size=14336
-pro.menu.cpu.8MHzatmega168.upload.maximum_data_size=1024
-pro.menu.cpu.8MHzatmega168.upload.speed=19200
-
-pro.menu.cpu.8MHzatmega168.bootloader.low_fuses=0xc6
-pro.menu.cpu.8MHzatmega168.bootloader.high_fuses=0xdd
-pro.menu.cpu.8MHzatmega168.bootloader.extended_fuses=0xF8
-pro.menu.cpu.8MHzatmega168.bootloader.file=atmega/ATmegaBOOT_168_pro_8MHz.hex
-
-pro.menu.cpu.8MHzatmega168.build.mcu=atmega168
-pro.menu.cpu.8MHzatmega168.build.f_cpu=8000000L
-
-##############################################################
-
-atmegang.name=Arduino NG or older
-
-atmegang.upload.tool=avrdude
-atmegang.upload.protocol=arduino
-atmegang.upload.speed=19200
-
-atmegang.bootloader.tool=avrdude
-atmegang.bootloader.unlock_bits=0x3F
-atmegang.bootloader.lock_bits=0x0F
-
-atmegang.build.mcu=atmegang
-atmegang.build.f_cpu=16000000L
-atmegang.build.board=AVR_NG
-atmegang.build.core=arduino
-atmegang.build.variant=standard
-
-## Arduino NG or older w/ ATmega168
-## --------------------------------
-atmegang.menu.cpu.atmega168=ATmega168
-
-atmegang.menu.cpu.atmega168.upload.maximum_size=14336
-atmegang.menu.cpu.atmega168.upload.maximum_data_size=1024
-
-atmegang.menu.cpu.atmega168.bootloader.low_fuses=0xff
-atmegang.menu.cpu.atmega168.bootloader.high_fuses=0xdd
-atmegang.menu.cpu.atmega168.bootloader.extended_fuses=0xF8
-atmegang.menu.cpu.atmega168.bootloader.file=atmega/ATmegaBOOT_168_ng.hex
-
-atmegang.menu.cpu.atmega168.build.mcu=atmega168
-
-## Arduino NG or older w/ ATmega8
-## ------------------------------
-atmegang.menu.cpu.atmega8=ATmega8
-
-atmegang.menu.cpu.atmega8.upload.maximum_size=7168
-atmegang.menu.cpu.atmega8.upload.maximum_data_size=1024
-
-atmegang.menu.cpu.atmega8.bootloader.low_fuses=0xdf
-atmegang.menu.cpu.atmega8.bootloader.high_fuses=0xca
-atmegang.menu.cpu.atmega8.bootloader.extended_fuses=
-atmegang.menu.cpu.atmega8.bootloader.file=atmega8/ATmegaBOOT-prod-firmware-2009-11-07.hex
-
-atmegang.menu.cpu.atmega8.build.mcu=atmega8
-
-##############################################################
-
-robotControl.name=Arduino Robot Control
-robotControl.vid.0=0x2341
-robotControl.pid.0=0x0038
-robotControl.vid.1=0x2341
-robotControl.pid.1=0x8038
-robotControl.vid.2=0x2A03
-robotControl.pid.2=0x0038
-robotControl.vid.3=0x2A03
-robotControl.pid.3=0x8038
-
-robotControl.upload.tool=avrdude
-robotControl.upload.protocol=avr109
-robotControl.upload.maximum_size=28672
-robotControl.upload.maximum_data_size=2560
-robotControl.upload.speed=57600
-robotControl.upload.disable_flushing=true
-robotControl.upload.use_1200bps_touch=true
-robotControl.upload.wait_for_upload_port=true
-
-robotControl.bootloader.tool=avrdude
-robotControl.bootloader.low_fuses=0xff
-robotControl.bootloader.high_fuses=0xd8
-robotControl.bootloader.extended_fuses=0xcb
-robotControl.bootloader.file=caterina-Arduino_Robot/Caterina-Robot-Control.hex
-robotControl.bootloader.unlock_bits=0x3F
-robotControl.bootloader.lock_bits=0x2F
-
-robotControl.build.mcu=atmega32u4
-robotControl.build.f_cpu=16000000L
-robotControl.build.vid=0x2341
-robotControl.build.pid=0x8038
-robotControl.build.usb_product="Robot Control"
-robotControl.build.board=AVR_ROBOT_CONTROL
-robotControl.build.core=arduino
-robotControl.build.variant=robot_control
-robotControl.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-robotMotor.name=Arduino Robot Motor
-robotMotor.vid.0=0x2341
-robotMotor.pid.0=0x0039
-robotMotor.vid.1=0x2341
-robotMotor.pid.1=0x8039
-robotMotor.vid.2=0x2A03
-robotMotor.pid.2=0x0039
-robotMotor.vid.3=0x2A03
-robotMotor.pid.3=0x8039
-
-robotMotor.upload.tool=avrdude
-robotMotor.upload.protocol=avr109
-robotMotor.upload.maximum_size=28672
-robotMotor.upload.maximum_data_size=2560
-robotMotor.upload.speed=57600
-robotMotor.upload.disable_flushing=true
-robotMotor.upload.use_1200bps_touch=true
-robotMotor.upload.wait_for_upload_port=true
-
-robotMotor.bootloader.tool=avrdude
-robotMotor.bootloader.low_fuses=0xff
-robotMotor.bootloader.high_fuses=0xd8
-robotMotor.bootloader.extended_fuses=0xcb
-robotMotor.bootloader.file=caterina-Arduino_Robot/Caterina-Robot-Motor.hex
-robotMotor.bootloader.unlock_bits=0x3F
-robotMotor.bootloader.lock_bits=0x2F
-
-robotMotor.build.mcu=atmega32u4
-robotMotor.build.f_cpu=16000000L
-robotMotor.build.vid=0x2341
-robotMotor.build.pid=0x8039
-robotMotor.build.usb_product="Robot Motor"
-robotMotor.build.board=AVR_ROBOT_MOTOR
-robotMotor.build.core=arduino
-robotMotor.build.variant=robot_motor
-robotMotor.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-gemma.vid.0=0x2341
-gemma.pid.0=0x0c9f
-
-gemma.name=Arduino Gemma
-
-gemma.bootloader.low_fuses=0xF1
-gemma.bootloader.high_fuses=0xD5
-gemma.bootloader.extended_fuses=0xFE
-gemma.bootloader.tool=avrdude
-gemma.bootloader.lock_bits=
-gemma.bootloader.unlock_bits=
-gemma.bootloader.file=gemma/gemma_v1.hex
-
-gemma.build.mcu=attiny85
-gemma.build.f_cpu=8000000L
-gemma.build.core=arduino
-gemma.build.variant=gemma
-gemma.build.board=AVR_GEMMA
-
-gemma.upload.tool=avrdude
-gemma.upload.maximum_size=5310
-
-##############################################################
-
-# Adafruit Circuit Playground 32u4 w/Caterina Configuration
-circuitplay32u4cat.name=Adafruit Circuit Playground
-circuitplay32u4cat.bootloader.low_fuses=0xff
-circuitplay32u4cat.bootloader.high_fuses=0xd8
-circuitplay32u4cat.bootloader.extended_fuses=0xcb
-circuitplay32u4cat.bootloader.file=caterina/Caterina-Circuitplay32u4.hex
-circuitplay32u4cat.bootloader.unlock_bits=0x3F
-circuitplay32u4cat.bootloader.lock_bits=0x2F
-circuitplay32u4cat.bootloader.tool=avrdude
-circuitplay32u4cat.build.mcu=atmega32u4
-circuitplay32u4cat.build.f_cpu=8000000L
-circuitplay32u4cat.build.vid=0x239A
-circuitplay32u4cat.build.pid=0x8011
-circuitplay32u4cat.build.core=arduino
-circuitplay32u4cat.build.variant=circuitplay32u4
-circuitplay32u4cat.build.board=AVR_CIRCUITPLAY
-circuitplay32u4cat.build.usb_product="Circuit Playground"
-circuitplay32u4cat.build.usb_manufacturer="Adafruit"
-circuitplay32u4cat.build.extra_flags={build.usb_flags}
-circuitplay32u4cat.upload.protocol=avr109
-circuitplay32u4cat.upload.maximum_size=28672
-circuitplay32u4cat.upload.speed=57600
-circuitplay32u4cat.upload.disable_flushing=true
-circuitplay32u4cat.upload.use_1200bps_touch=true
-circuitplay32u4cat.upload.wait_for_upload_port=true
-circuitplay32u4cat.upload.tool=avrdude
-circuitplay32u4cat.vid.0=0x239A
-circuitplay32u4cat.pid.0=0x8011
-
-##############################################################
-
-yunmini.name=Arduino Yún Mini
-yunmini.upload.via_ssh=true
-
-yunmini.vid.0=0x2a03
-yunmini.pid.0=0x0050
-yunmini.vid.1=0x2a03
-yunmini.pid.1=0x8050
-
-yunmini.upload.tool=avrdude
-yunmini.upload.protocol=avr109
-yunmini.upload.maximum_size=28672
-yunmini.upload.maximum_data_size=2560
-yunmini.upload.speed=57600
-yunmini.upload.disable_flushing=true
-yunmini.upload.use_1200bps_touch=true
-yunmini.upload.wait_for_upload_port=true
-
-yunmini.bootloader.tool=avrdude
-yunmini.bootloader.low_fuses=0xff
-yunmini.bootloader.high_fuses=0xd8
-yunmini.bootloader.extended_fuses=0xfb
-yunmini.bootloader.file=caterina/Caterina-YunMini.hex
-yunmini.bootloader.unlock_bits=0x3F
-yunmini.bootloader.lock_bits=0x2F
-
-yunmini.build.mcu=atmega32u4
-yunmini.build.f_cpu=16000000L
-yunmini.build.vid=0x2a03
-yunmini.build.pid=0x8050
-yunmini.build.usb_product="Arduino Yún Mini"
-yunmini.build.board=AVR_YUNMINI
-yunmini.build.core=arduino
-yunmini.build.variant=yun
-yunmini.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-chiwawa.name=Arduino Industrial 101
-chiwawa.upload.via_ssh=true
-
-chiwawa.vid.0=0x2a03
-chiwawa.pid.0=0x0056
-chiwawa.vid.1=0x2a03
-chiwawa.pid.1=0x8056
-
-chiwawa.upload.tool=avrdude
-chiwawa.upload.protocol=avr109
-chiwawa.upload.maximum_size=28672
-chiwawa.upload.maximum_data_size=2560
-chiwawa.upload.speed=57600
-chiwawa.upload.disable_flushing=true
-chiwawa.upload.use_1200bps_touch=true
-chiwawa.upload.wait_for_upload_port=true
-
-chiwawa.bootloader.tool=avrdude
-chiwawa.bootloader.low_fuses=0xff
-chiwawa.bootloader.high_fuses=0xd8
-chiwawa.bootloader.extended_fuses=0xfb
-chiwawa.bootloader.file=caterina/Caterina-Industrial101.hex
-chiwawa.bootloader.unlock_bits=0x3F
-chiwawa.bootloader.lock_bits=0x2F
-
-chiwawa.build.mcu=atmega32u4
-chiwawa.build.f_cpu=16000000L
-chiwawa.build.vid=0x2a03
-chiwawa.build.pid=0x8056
-chiwawa.build.usb_product="Arduino Industrial 101"
-chiwawa.build.board=AVR_INDUSTRIAL101
-chiwawa.build.core=arduino
-chiwawa.build.variant=yun
-chiwawa.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-one.name=Linino One
-one.upload.via_ssh=true
-
-one.vid.0=0x2a03
-one.pid.0=0x0001
-one.vid.1=0x2a03
-one.pid.1=0x8001
-
-one.upload.tool=avrdude
-one.upload.protocol=avr109
-one.upload.maximum_size=28672
-one.upload.maximum_data_size=2560
-one.upload.speed=57600
-one.upload.disable_flushing=true
-one.upload.use_1200bps_touch=true
-one.upload.wait_for_upload_port=true
-
-one.bootloader.tool=avrdude
-one.bootloader.low_fuses=0xff
-one.bootloader.high_fuses=0xd8
-one.bootloader.extended_fuses=0xfb
-one.bootloader.file=caterina/Caterina-LininoOne.hex
-one.bootloader.unlock_bits=0x3F
-one.bootloader.lock_bits=0x2F
-
-one.build.mcu=atmega32u4
-one.build.f_cpu=16000000L
-one.build.vid=0x2a03
-one.build.pid=0x8001
-one.build.usb_product="Linino One"
-one.build.board=AVR_LININO_ONE
-one.build.core=arduino
-one.build.variant=yun
-one.build.extra_flags={build.usb_flags}
-
-##############################################################
-
-unowifi.name=Arduino Uno WiFi
-unowifi.vid.0=0x2A03
-unowifi.pid.0=0x0057
-
-unowifi.upload.tool=avrdude
-unowifi.upload.protocol=arduino
-unowifi.upload.maximum_size=32256
-unowifi.upload.maximum_data_size=2048
-unowifi.upload.speed=115200
-unowifi.upload.network.endpoint_upload=/pgm/upload
-unowifi.upload.network.endpoint_sync=/pgm/sync
-unowifi.upload.network.sync_return=204:SYNC
-unowifi.upload.network.endpoint_reset=/log/reset
-unowifi.upload.network.port=80
-
-unowifi.bootloader.tool=avrdude
-unowifi.bootloader.low_fuses=0xFF
-unowifi.bootloader.high_fuses=0xDE
-unowifi.bootloader.extended_fuses=0x05
-unowifi.bootloader.unlock_bits=0x3F
-unowifi.bootloader.lock_bits=0x0F
-unowifi.bootloader.file=optiboot/optiboot_atmega328.hex
-
-unowifi.build.mcu=atmega328p
-unowifi.build.f_cpu=16000000L
-unowifi.build.board=AVR_UNO_WIFI_DEV_ED
-unowifi.build.core=arduino
-unowifi.build.variant=standard
-unowifi.build.esp_ch_uart_br=19200
-unowifi.build.extra_flags=-DESP_CH_UART -DESP_CH_UART_BR={build.esp_ch_uart_br}
+
+# CPU #
+micro.build.f_cpu=16000000L
+micro.bootloader.extended_fuses=0xCB
+micro.bootloader.file=caterina/Caterina-promicro16.hex
+
+# Keyboard ID #
+micro.menu.keyboardid.default=Arduino Leonardo
+micro.menu.keyboardid.default.build.vid=0x2341
+micro.menu.keyboardid.default.build.pid=0x8036
+micro.menu.keyboardid.default.build.usb_product=Leonardo
+micro.menu.keyboardid.default.build.usb_manufacturer=Arduino
+
+micro.menu.keyboardid.apple=Apple Aluminium Keyboard
+micro.menu.keyboardid.apple.build.vid=0x05ac
+micro.menu.keyboardid.apple.build.pid=0x0221
+micro.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+micro.menu.keyboardid.apple.build.usb_manufacturer=Apple
+
+micro.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+micro.menu.keyboardid.appleint.build.vid=0x05ac
+micro.menu.keyboardid.appleint.build.pid=0x0259
+micro.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+micro.menu.keyboardid.appleint.build.usb_manufacturer=Apple
+
+micro.menu.keyboardid.logitechhid=Logitech USB Keyboard
+micro.menu.keyboardid.logitechhid.build.vid=0x046d
+micro.menu.keyboardid.logitechhid.build.pid=0xc316
+micro.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+micro.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
+
+micro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+micro.menu.keyboardid.logitechgaming.build.vid=0x046d
+micro.menu.keyboardid.logitechgaming.build.pid=0xc335
+micro.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+micro.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
+
+micro.menu.keyboardid.ms=Microsoft USB Keyboard
+micro.menu.keyboardid.ms.build.vid=0x045e
+micro.menu.keyboardid.ms.build.pid=0xfff8
+micro.menu.keyboardid.ms.build.usb_product=USB Keyboard
+micro.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
+
+# Protocol #
+micro.menu.protocol.auto=Auto (I2C & Serial)
+micro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
+
+micro.menu.protocol.i2c=I2C
+micro.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
+
+micro.menu.protocol.serial=Serial
+micro.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+# Debug #
+micro.menu.debug.serial=Serial (115200b, newline)
+micro.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+micro.menu.debug.disabled=Disabled
+micro.menu.debug.disabled.build.debug_flags=
+
+# LED #
+micro.menu.ledpin.disabled=Disabled
+micro.menu.ledpin.0=RX (Serial)
+micro.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=0
+micro.menu.ledpin.1=TX (Serial)
+micro.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=1
+micro.menu.ledpin.2=2 (SDA I2C)
+micro.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=2
+micro.menu.ledpin.3=3 (SCL I2C)
+micro.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=3
+micro.menu.ledpin.4=4
+micro.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=4
+micro.menu.ledpin.5=5
+micro.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=5
+micro.menu.ledpin.6=6
+micro.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=6
+micro.menu.ledpin.7=7
+micro.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=7
+micro.menu.ledpin.8=8
+micro.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=8
+micro.menu.ledpin.9=9
+micro.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=9
+micro.menu.ledpin.10=10
+micro.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=10
+micro.menu.ledpin.11=11
+micro.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=11
+micro.menu.ledpin.12=12
+micro.menu.ledpin.12.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=12
+micro.menu.ledpin.13=13
+micro.menu.ledpin.13.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=13
+micro.menu.ledpin.14=MI (MISO SPI)
+micro.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=14
+micro.menu.ledpin.15=SCK (SCLK SPI)
+micro.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=15
+micro.menu.ledpin.16=MO (MOSI SPI)
+micro.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=16
+micro.menu.ledpin.17=SS (SPI)
+micro.menu.ledpin.17.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=17
+micro.menu.ledpin.18=A0
+micro.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=18
+micro.menu.ledpin.19=A1
+micro.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=19
+micro.menu.ledpin.20=A2
+micro.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=20
+micro.menu.ledpin.21=A3
+micro.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=21
+micro.menu.ledpin.22=A4
+micro.menu.ledpin.22.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=22
+micro.menu.ledpin.23=A5
+micro.menu.ledpin.23.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=23
+
+# Serial Bridge #
+micro.menu.bridge.disabled=Disabled
+micro.menu.bridge.disabled.build.bridge_flags=
+
+micro.menu.bridge.serial1=Serial1
+micro.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+
+micro.menu.bridgebutton.disabled=Disabled
+micro.menu.bridgebutton.2=2 (SDA I2C)
+micro.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+micro.menu.bridgebutton.3=3 (SCL I2C)
+micro.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+micro.menu.bridgebutton.4=4
+micro.menu.bridgebutton.4.build.bridge_button=-DBRIDGE_SWITCH=4
+micro.menu.bridgebutton.5=5
+micro.menu.bridgebutton.5.build.bridge_button=-DBRIDGE_SWITCH=5
+micro.menu.bridgebutton.6=6
+micro.menu.bridgebutton.6.build.bridge_button=-DBRIDGE_SWITCH=6
+micro.menu.bridgebutton.7=7
+micro.menu.bridgebutton.7.build.bridge_button=-DBRIDGE_SWITCH=7
+micro.menu.bridgebutton.8=8
+micro.menu.bridgebutton.8.build.bridge_button=-DBRIDGE_SWITCH=8
+micro.menu.bridgebutton.9=9
+micro.menu.bridgebutton.9.build.bridge_button=-DBRIDGE_SWITCH=9
+micro.menu.bridgebutton.10=10
+micro.menu.bridgebutton.10.build.bridge_button=-DBRIDGE_SWITCH=10
+micro.menu.bridgebutton.11=11
+micro.menu.bridgebutton.11.build.bridge_button=-DBRIDGE_SWITCH=11
+micro.menu.bridgebutton.12=12
+micro.menu.bridgebutton.12.build.bridge_button=-DBRIDGE_SWITCH=12
+micro.menu.bridgebutton.13=13
+micro.menu.bridgebutton.13.build.bridge_button=-DBRIDGE_SWITCH=13
+micro.menu.bridgebutton.14=MI (MISO SPI)
+micro.menu.bridgebutton.14.build.bridge_button=-DBRIDGE_SWITCH=14
+micro.menu.bridgebutton.15=SCK (SCLK SPI)
+micro.menu.bridgebutton.15.build.bridge_button=-DBRIDGE_SWITCH=15
+micro.menu.bridgebutton.16=MO (MOSI SPI)
+micro.menu.bridgebutton.16.build.bridge_button=-DBRIDGE_SWITCH=16
+micro.menu.bridgebutton.17=SS (SPI)
+micro.menu.bridgebutton.17.build.bridge_button=-DBRIDGE_SWITCH=17
+micro.menu.bridgebutton.18=A0
+micro.menu.bridgebutton.18.build.bridge_button=-DBRIDGE_SWITCH=18
+micro.menu.bridgebutton.19=A1
+micro.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+micro.menu.bridgebutton.20=A2
+micro.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+micro.menu.bridgebutton.21=A3
+micro.menu.bridgebutton.21.build.bridge_button=-DBRIDGE_SWITCH=21
+micro.menu.bridgebutton.22=A4
+micro.menu.bridgebutton.22.build.bridge_button=-DBRIDGE_SWITCH=22
+micro.menu.bridgebutton.23=A5
+micro.menu.bridgebutton.23.build.bridge_button=-DBRIDGE_SWITCH=23
+
+micro.menu.bridgerst.disabled=Disabled
+micro.menu.bridgerst.2=2 (SDA I2C)
+micro.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+micro.menu.bridgerst.3=3 (SCL I2C)
+micro.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+micro.menu.bridgerst.4=4
+micro.menu.bridgerst.4.build.bridge_rst=-DBRIDGE_RST=4
+micro.menu.bridgerst.5=5
+micro.menu.bridgerst.5.build.bridge_rst=-DBRIDGE_RST=5
+micro.menu.bridgerst.6=6
+micro.menu.bridgerst.6.build.bridge_rst=-DBRIDGE_RST=6
+micro.menu.bridgerst.7=7
+micro.menu.bridgerst.7.build.bridge_rst=-DBRIDGE_RST=7
+micro.menu.bridgerst.8=8
+micro.menu.bridgerst.8.build.bridge_rst=-DBRIDGE_RST=8
+micro.menu.bridgerst.9=9
+micro.menu.bridgerst.9.build.bridge_rst=-DBRIDGE_RST=9
+micro.menu.bridgerst.10=10
+micro.menu.bridgerst.10.build.bridge_rst=-DBRIDGE_RST=10
+micro.menu.bridgerst.11=11
+micro.menu.bridgerst.11.build.bridge_rst=-DBRIDGE_RST=11
+micro.menu.bridgerst.12=12
+micro.menu.bridgerst.12.build.bridge_rst=-DBRIDGE_RST=12
+micro.menu.bridgerst.13=13
+micro.menu.bridgerst.13.build.bridge_rst=-DBRIDGE_RST=13
+micro.menu.bridgerst.14=MI (MISO SPI)
+micro.menu.bridgerst.14.build.bridge_rst=-DBRIDGE_RST=14
+micro.menu.bridgerst.15=SCK (SCLK SPI)
+micro.menu.bridgerst.15.build.bridge_rst=-DBRIDGE_RST=15
+micro.menu.bridgerst.16=MO (MOSI SPI)
+micro.menu.bridgerst.16.build.bridge_rst=-DBRIDGE_RST=16
+micro.menu.bridgerst.17=SS (SPI)
+micro.menu.bridgerst.17.build.bridge_rst=-DBRIDGE_RST=17
+micro.menu.bridgerst.18=A0
+micro.menu.bridgerst.18.build.bridge_rst=-DBRIDGE_RST=18
+micro.menu.bridgerst.19=A1
+micro.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+micro.menu.bridgerst.20=A2
+micro.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+micro.menu.bridgerst.21=A3
+micro.menu.bridgerst.21.build.bridge_rst=-DBRIDGE_RST=21
+micro.menu.bridgerst.22=A4
+micro.menu.bridgerst.22.build.bridge_rst=-DBRIDGE_RST=22
+micro.menu.bridgerst.23=A5
+micro.menu.bridgerst.23.build.bridge_rst=-DBRIDGE_RST=23
+
+micro.menu.bridge0.disabled=Disabled
+micro.menu.bridge0.2=2 (SDA I2C)
+micro.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+micro.menu.bridge0.3=3 (SCL I2C)
+micro.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+micro.menu.bridge0.4=4
+micro.menu.bridge0.4.build.bridge_0=-DBRIDGE_0=4
+micro.menu.bridge0.5=5
+micro.menu.bridge0.5.build.bridge_0=-DBRIDGE_0=5
+micro.menu.bridge0.6=6
+micro.menu.bridge0.6.build.bridge_0=-DBRIDGE_0=6
+micro.menu.bridge0.7=7
+micro.menu.bridge0.7.build.bridge_0=-DBRIDGE_0=7
+micro.menu.bridge0.8=8
+micro.menu.bridge0.8.build.bridge_0=-DBRIDGE_0=8
+micro.menu.bridge0.9=9
+micro.menu.bridge0.9.build.bridge_0=-DBRIDGE_0=9
+micro.menu.bridge0.10=10
+micro.menu.bridge0.10.build.bridge_0=-DBRIDGE_0=10
+micro.menu.bridge0.11=11
+micro.menu.bridge0.11.build.bridge_0=-DBRIDGE_0=11
+micro.menu.bridge0.12=12
+micro.menu.bridge0.12.build.bridge_0=-DBRIDGE_0=12
+micro.menu.bridge0.13=13
+micro.menu.bridge0.13.build.bridge_0=-DBRIDGE_0=13
+micro.menu.bridge0.14=MI (MISO SPI)
+micro.menu.bridge0.14.build.bridge_0=-DBRIDGE_0=14
+micro.menu.bridge0.15=SCK (SCLK SPI)
+micro.menu.bridge0.15.build.bridge_0=-DBRIDGE_0=15
+micro.menu.bridge0.16=MO (MOSI SPI)
+micro.menu.bridge0.16.build.bridge_0=-DBRIDGE_0=16
+micro.menu.bridge0.17=SS (SPI)
+micro.menu.bridge0.17.build.bridge_0=-DBRIDGE_0=17
+micro.menu.bridge0.18=A0
+micro.menu.bridge0.18.build.bridge_0=-DBRIDGE_0=18
+micro.menu.bridge0.19=A1
+micro.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+micro.menu.bridge0.20=A2
+micro.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+micro.menu.bridge0.21=A3
+micro.menu.bridge0.21.build.bridge_0=-DBRIDGE_0=21
+micro.menu.bridge0.22=A4
+micro.menu.bridge0.22.build.bridge_0=-DBRIDGE_0=22
+micro.menu.bridge0.23=A5
+micro.menu.bridge0.23.build.bridge_0=-DBRIDGE_0=23
+
+########## Sparkfun Pro Micro ##########
+
+promicro.name=Sparkfun Pro Micro
+
+promicro.upload.tool=avrdude
+promicro.upload.protocol=avr109
+promicro.upload.maximum_size=28672
+promicro.upload.maximum_data_size=2560
+promicro.upload.speed=57600
+promicro.upload.disable_flushing=true
+promicro.upload.use_1200bps_touch=true
+promicro.upload.wait_for_upload_port=true
+
+promicro.bootloader.tool=avrdude
+promicro.bootloader.unlock_bits=0x3F
+promicro.bootloader.lock_bits=0x2F
+promicro.bootloader.low_fuses=0xFF
+promicro.bootloader.high_fuses=0xD8
+
+promicro.build.board=AVR_ATMEGA32U4
+promicro.build.core=arduino
+promicro.build.mcu=atmega32u4
+promicro.build.variant=promicro
+
+# CPU #
+promicro.menu.cpu.16MHzatmega32U4=5V, 16 MHz
+promicro.menu.cpu.16MHzatmega32U4.build.f_cpu=16000000L
+promicro.menu.cpu.16MHzatmega32U4.bootloader.extended_fuses=0xCB
+promicro.menu.cpu.16MHzatmega32U4.bootloader.file=caterina/Caterina-promicro16.hex
+
+promicro.menu.cpu.8MHzatmega32U4=3.3V, 8 MHz
+promicro.menu.cpu.8MHzatmega32U4.build.f_cpu=8000000L
+promicro.menu.cpu.8MHzatmega32U4.bootloader.extended_fuses=0xFE
+promicro.menu.cpu.8MHzatmega32U4.bootloader.file=caterina/Caterina-promicro8.hex
+
+# Keyboard ID #
+promicro.menu.keyboardid.default=Arduino Leonardo
+promicro.menu.keyboardid.default.build.vid=0x2341
+promicro.menu.keyboardid.default.build.pid=0x8036
+promicro.menu.keyboardid.default.build.usb_product=Leonardo
+promicro.menu.keyboardid.default.build.usb_manufacturer=Arduino
+
+promicro.menu.keyboardid.apple=Apple Aluminium Keyboard
+promicro.menu.keyboardid.apple.build.vid=0x05ac
+promicro.menu.keyboardid.apple.build.pid=0x0221
+promicro.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+promicro.menu.keyboardid.apple.build.usb_manufacturer=Apple
+
+promicro.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+promicro.menu.keyboardid.appleint.build.vid=0x05ac
+promicro.menu.keyboardid.appleint.build.pid=0x0259
+promicro.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+promicro.menu.keyboardid.appleint.build.usb_manufacturer=Apple
+
+promicro.menu.keyboardid.logitechhid=Logitech USB Keyboard
+promicro.menu.keyboardid.logitechhid.build.vid=0x046d
+promicro.menu.keyboardid.logitechhid.build.pid=0xc316
+promicro.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+promicro.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
+
+promicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+promicro.menu.keyboardid.logitechgaming.build.vid=0x046d
+promicro.menu.keyboardid.logitechgaming.build.pid=0xc335
+promicro.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+promicro.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
+
+promicro.menu.keyboardid.ms=Microsoft USB Keyboard
+promicro.menu.keyboardid.ms.build.vid=0x045e
+promicro.menu.keyboardid.ms.build.pid=0xfff8
+promicro.menu.keyboardid.ms.build.usb_product=USB Keyboard
+promicro.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
+
+# Protocol #
+promicro.menu.protocol.auto=Auto (I2C & Serial)
+promicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
+
+promicro.menu.protocol.i2c=I2C
+promicro.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
+
+promicro.menu.protocol.serial=Serial
+promicro.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+# Debug #
+promicro.menu.debug.serial=Serial (115200b, newline)
+promicro.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+promicro.menu.debug.disabled=Disabled
+promicro.menu.debug.disabled.build.debug_flags=
+
+# LED #
+promicro.menu.ledpin.disabled=Disabled
+promicro.menu.ledpin.0=RX (Serial)
+promicro.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=0
+promicro.menu.ledpin.1=TX (Serial)
+promicro.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=1
+promicro.menu.ledpin.2=2 (SDA I2C)
+promicro.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=2
+promicro.menu.ledpin.3=3 (SCL I2C)
+promicro.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=3
+promicro.menu.ledpin.4=4
+promicro.menu.ledpin.4.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=4
+promicro.menu.ledpin.5=5
+promicro.menu.ledpin.5.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=5
+promicro.menu.ledpin.6=6
+promicro.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=6
+promicro.menu.ledpin.7=7
+promicro.menu.ledpin.7.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=7
+promicro.menu.ledpin.8=8
+promicro.menu.ledpin.8.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=8
+promicro.menu.ledpin.9=9
+promicro.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=9
+promicro.menu.ledpin.10=10
+promicro.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=10
+promicro.menu.ledpin.14=14
+promicro.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=14
+promicro.menu.ledpin.15=15
+promicro.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=15
+promicro.menu.ledpin.16=16
+promicro.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=16
+promicro.menu.ledpin.18=A0
+promicro.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=18
+promicro.menu.ledpin.19=A1
+promicro.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=19
+promicro.menu.ledpin.20=A2
+promicro.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=20
+promicro.menu.ledpin.21=A3
+promicro.menu.ledpin.21.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=21
+
+# Serial Bridge #
+promicro.menu.bridge.disabled=Disabled
+promicro.menu.bridge.disabled.build.bridge_flags=
+
+promicro.menu.bridge.serial1=Serial1
+promicro.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+
+promicro.menu.bridgebutton.disabled=Disabled
+promicro.menu.bridgebutton.2=2 (SDA I2C)
+promicro.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+promicro.menu.bridgebutton.3=3 (SCL I2C)
+promicro.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+promicro.menu.bridgebutton.4=4
+promicro.menu.bridgebutton.4.build.bridge_button=-DBRIDGE_SWITCH=4
+promicro.menu.bridgebutton.5=5
+promicro.menu.bridgebutton.5.build.bridge_button=-DBRIDGE_SWITCH=5
+promicro.menu.bridgebutton.6=6
+promicro.menu.bridgebutton.6.build.bridge_button=-DBRIDGE_SWITCH=6
+promicro.menu.bridgebutton.7=7
+promicro.menu.bridgebutton.7.build.bridge_button=-DBRIDGE_SWITCH=7
+promicro.menu.bridgebutton.8=8
+promicro.menu.bridgebutton.8.build.bridge_button=-DBRIDGE_SWITCH=8
+promicro.menu.bridgebutton.9=9
+promicro.menu.bridgebutton.9.build.bridge_button=-DBRIDGE_SWITCH=9
+promicro.menu.bridgebutton.10=10
+promicro.menu.bridgebutton.10.build.bridge_button=-DBRIDGE_SWITCH=10
+promicro.menu.bridgebutton.14=14
+promicro.menu.bridgebutton.14.build.bridge_button=-DBRIDGE_SWITCH=14
+promicro.menu.bridgebutton.15=15
+promicro.menu.bridgebutton.15.build.bridge_button=-DBRIDGE_SWITCH=15
+promicro.menu.bridgebutton.16=16
+promicro.menu.bridgebutton.16.build.bridge_button=-DBRIDGE_SWITCH=16
+promicro.menu.bridgebutton.18=A0
+promicro.menu.bridgebutton.18.build.bridge_button=-DBRIDGE_SWITCH=18
+promicro.menu.bridgebutton.19=A1
+promicro.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+promicro.menu.bridgebutton.20=A2
+promicro.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+promicro.menu.bridgebutton.21=A3
+promicro.menu.bridgebutton.21.build.bridge_button=-DBRIDGE_SWITCH=21
+
+promicro.menu.bridgerst.disabled=Disabled
+promicro.menu.bridgerst.2=2 (SDA I2C)
+promicro.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+promicro.menu.bridgerst.3=3 (SCL I2C)
+promicro.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+promicro.menu.bridgerst.4=4
+promicro.menu.bridgerst.4.build.bridge_rst=-DBRIDGE_RST=4
+promicro.menu.bridgerst.5=5
+promicro.menu.bridgerst.5.build.bridge_rst=-DBRIDGE_RST=5
+promicro.menu.bridgerst.6=6
+promicro.menu.bridgerst.6.build.bridge_rst=-DBRIDGE_RST=6
+promicro.menu.bridgerst.7=7
+promicro.menu.bridgerst.7.build.bridge_rst=-DBRIDGE_RST=7
+promicro.menu.bridgerst.8=8
+promicro.menu.bridgerst.8.build.bridge_rst=-DBRIDGE_RST=8
+promicro.menu.bridgerst.9=9
+promicro.menu.bridgerst.9.build.bridge_rst=-DBRIDGE_RST=9
+promicro.menu.bridgerst.10=10
+promicro.menu.bridgerst.10.build.bridge_rst=-DBRIDGE_RST=10
+promicro.menu.bridgerst.14=14
+promicro.menu.bridgerst.14.build.bridge_rst=-DBRIDGE_RST=14
+promicro.menu.bridgerst.15=15
+promicro.menu.bridgerst.15.build.bridge_rst=-DBRIDGE_RST=15
+promicro.menu.bridgerst.16=16
+promicro.menu.bridgerst.16.build.bridge_rst=-DBRIDGE_RST=16
+promicro.menu.bridgerst.18=A0
+promicro.menu.bridgerst.18.build.bridge_rst=-DBRIDGE_RST=18
+promicro.menu.bridgerst.19=A1
+promicro.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+promicro.menu.bridgerst.20=A2
+promicro.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+promicro.menu.bridgerst.21=A3
+promicro.menu.bridgerst.21.build.bridge_rst=-DBRIDGE_RST=21
+
+promicro.menu.bridge0.disabled=Disabled
+promicro.menu.bridge0.2=2 (SDA I2C)
+promicro.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+promicro.menu.bridge0.3=3 (SCL I2C)
+promicro.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+promicro.menu.bridge0.4=4
+promicro.menu.bridge0.4.build.bridge_0=-DBRIDGE_0=4
+promicro.menu.bridge0.5=5
+promicro.menu.bridge0.5.build.bridge_0=-DBRIDGE_0=5
+promicro.menu.bridge0.6=6
+promicro.menu.bridge0.6.build.bridge_0=-DBRIDGE_0=6
+promicro.menu.bridge0.7=7
+promicro.menu.bridge0.7.build.bridge_0=-DBRIDGE_0=7
+promicro.menu.bridge0.8=8
+promicro.menu.bridge0.8.build.bridge_0=-DBRIDGE_0=8
+promicro.menu.bridge0.9=9
+promicro.menu.bridge0.9.build.bridge_0=-DBRIDGE_0=9
+promicro.menu.bridge0.10=10
+promicro.menu.bridge0.10.build.bridge_0=-DBRIDGE_0=10
+promicro.menu.bridge0.14=14
+promicro.menu.bridge0.14.build.bridge_0=-DBRIDGE_0=14
+promicro.menu.bridge0.15=15
+promicro.menu.bridge0.15.build.bridge_0=-DBRIDGE_0=15
+promicro.menu.bridge0.16=16
+promicro.menu.bridge0.16.build.bridge_0=-DBRIDGE_0=16
+promicro.menu.bridge0.18=A0
+promicro.menu.bridge0.18.build.bridge_0=-DBRIDGE_0=18
+promicro.menu.bridge0.19=A1
+promicro.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+promicro.menu.bridge0.20=A2
+promicro.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+promicro.menu.bridge0.21=A3
+promicro.menu.bridge0.21.build.bridge_0=-DBRIDGE_0=21
+
+########## CJMCU Beetle ##########
+
+cjmcu.name=CJMCU Beetle
+
+cjmcu.upload.tool=avrdude
+cjmcu.upload.protocol=avr109
+cjmcu.upload.maximum_size=28672
+cjmcu.upload.maximum_data_size=2560
+cjmcu.upload.speed=57600
+cjmcu.upload.disable_flushing=true
+cjmcu.upload.use_1200bps_touch=true
+cjmcu.upload.wait_for_upload_port=true
+
+cjmcu.bootloader.tool=avrdude
+cjmcu.bootloader.unlock_bits=0x3F
+cjmcu.bootloader.lock_bits=0x2F
+cjmcu.bootloader.low_fuses=0xFF
+cjmcu.bootloader.high_fuses=0xD8
+
+cjmcu.build.board=AVR_ATMEGA32U4
+cjmcu.build.core=arduino
+cjmcu.build.mcu=atmega32u4
+cjmcu.build.variant=cjmcu
+
+# CPU #
+cjmcu.build.f_cpu=16000000L
+cjmcu.bootloader.extended_fuses=0xCB
+cjmcu.bootloader.file=caterina/Caterina-promicro16.hex
+
+# Keyboard ID #
+cjmcu.menu.keyboardid.default=Arduino Leonardo
+cjmcu.menu.keyboardid.default.build.vid=0x2341
+cjmcu.menu.keyboardid.default.build.pid=0x8036
+cjmcu.menu.keyboardid.default.build.usb_product=Leonardo
+cjmcu.menu.keyboardid.default.build.usb_manufacturer=Arduino
+
+cjmcu.menu.keyboardid.apple=Apple Aluminium Keyboard
+cjmcu.menu.keyboardid.apple.build.vid=0x05ac
+cjmcu.menu.keyboardid.apple.build.pid=0x0221
+cjmcu.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+cjmcu.menu.keyboardid.apple.build.usb_manufacturer=Apple
+
+cjmcu.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+cjmcu.menu.keyboardid.appleint.build.vid=0x05ac
+cjmcu.menu.keyboardid.appleint.build.pid=0x0259
+cjmcu.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+cjmcu.menu.keyboardid.appleint.build.usb_manufacturer=Apple
+
+cjmcu.menu.keyboardid.logitechhid=Logitech USB Keyboard
+cjmcu.menu.keyboardid.logitechhid.build.vid=0x046d
+cjmcu.menu.keyboardid.logitechhid.build.pid=0xc316
+cjmcu.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+cjmcu.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
+
+cjmcu.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+cjmcu.menu.keyboardid.logitechgaming.build.vid=0x046d
+cjmcu.menu.keyboardid.logitechgaming.build.pid=0xc335
+cjmcu.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+cjmcu.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
+
+cjmcu.menu.keyboardid.ms=Microsoft USB Keyboard
+cjmcu.menu.keyboardid.ms.build.vid=0x045e
+cjmcu.menu.keyboardid.ms.build.pid=0xfff8
+cjmcu.menu.keyboardid.ms.build.usb_product=USB Keyboard
+cjmcu.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
+
+# Protocol #
+cjmcu.menu.protocol.auto=Auto (I2C & Serial)
+cjmcu.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
+
+cjmcu.menu.protocol.i2c=I2C
+cjmcu.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
+
+cjmcu.menu.protocol.serial=Serial
+cjmcu.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+# Debug #
+cjmcu.menu.debug.serial=Serial (115200b, newline)
+cjmcu.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+cjmcu.menu.debug.disabled=Disabled
+cjmcu.menu.debug.disabled.build.debug_flags=
+
+# LED #
+cjmcu.menu.ledpin.disabled=Disabled
+cjmcu.menu.ledpin.0=RX (Serial)
+cjmcu.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=0
+cjmcu.menu.ledpin.1=TX (Serial)
+cjmcu.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=1
+cjmcu.menu.ledpin.2=SDA (I2C)
+cjmcu.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=2
+cjmcu.menu.ledpin.3=SCL (I2C)
+cjmcu.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=3
+cjmcu.menu.ledpin.9=D9
+cjmcu.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=9
+cjmcu.menu.ledpin.10=D10
+cjmcu.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=10
+cjmcu.menu.ledpin.11=D11
+cjmcu.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=11
+cjmcu.menu.ledpin.14=MI (MISO SPI)
+cjmcu.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=14
+cjmcu.menu.ledpin.15=SCK (SCLK SPI)
+cjmcu.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=15
+cjmcu.menu.ledpin.16=MO (MOSI SPI)
+cjmcu.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=16
+cjmcu.menu.ledpin.18=A0
+cjmcu.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=18
+cjmcu.menu.ledpin.19=A1
+cjmcu.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=19
+cjmcu.menu.ledpin.20=A2
+cjmcu.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=20
+
+# Serial Bridge #
+cjmcu.menu.bridge.disabled=Disabled
+cjmcu.menu.bridge.disabled.build.bridge_flags=
+
+cjmcu.menu.bridge.serial1=Serial1
+cjmcu.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+
+cjmcu.menu.bridgebutton.disabled=Disabled
+cjmcu.menu.bridgebutton.2=SDA (I2C)
+cjmcu.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+cjmcu.menu.bridgebutton.3=SCL (I2C)
+cjmcu.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+cjmcu.menu.bridgebutton.9=D9
+cjmcu.menu.bridgebutton.9.build.bridge_button=-DBRIDGE_SWITCH=9
+cjmcu.menu.bridgebutton.10=D10
+cjmcu.menu.bridgebutton.10.build.bridge_button=-DBRIDGE_SWITCH=10
+cjmcu.menu.bridgebutton.11=D11
+cjmcu.menu.bridgebutton.11.build.bridge_button=-DBRIDGE_SWITCH=11
+cjmcu.menu.bridgebutton.14=MI (MISO SPI)
+cjmcu.menu.bridgebutton.14.build.bridge_button=-DBRIDGE_SWITCH=14
+cjmcu.menu.bridgebutton.15=SCK (SCLK SPI)
+cjmcu.menu.bridgebutton.15.build.bridge_button=-DBRIDGE_SWITCH=15
+cjmcu.menu.bridgebutton.16=MO (MOSI SPI)
+cjmcu.menu.bridgebutton.16.build.bridge_button=-DBRIDGE_SWITCH=16
+cjmcu.menu.bridgebutton.18=A0
+cjmcu.menu.bridgebutton.18.build.bridge_button=-DBRIDGE_SWITCH=18
+cjmcu.menu.bridgebutton.19=A1
+cjmcu.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+cjmcu.menu.bridgebutton.20=A2
+cjmcu.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+
+cjmcu.menu.bridgerst.disabled=Disabled
+cjmcu.menu.bridgerst.2=SDA (I2C)
+cjmcu.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+cjmcu.menu.bridgerst.3=SCL (I2C)
+cjmcu.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+cjmcu.menu.bridgerst.9=D9
+cjmcu.menu.bridgerst.9.build.bridge_rst=-DBRIDGE_RST=9
+cjmcu.menu.bridgerst.10=D10
+cjmcu.menu.bridgerst.10.build.bridge_rst=-DBRIDGE_RST=10
+cjmcu.menu.bridgerst.11=D11
+cjmcu.menu.bridgerst.11.build.bridge_rst=-DBRIDGE_RST=11
+cjmcu.menu.bridgerst.14=MI (MISO SPI)
+cjmcu.menu.bridgerst.14.build.bridge_rst=-DBRIDGE_RST=14
+cjmcu.menu.bridgerst.15=SCK (SCLK SPI)
+cjmcu.menu.bridgerst.15.build.bridge_rst=-DBRIDGE_RST=15
+cjmcu.menu.bridgerst.16=MO (MOSI SPI)
+cjmcu.menu.bridgerst.16.build.bridge_rst=-DBRIDGE_RST=16
+cjmcu.menu.bridgerst.18=A0
+cjmcu.menu.bridgerst.18.build.bridge_rst=-DBRIDGE_RST=18
+cjmcu.menu.bridgerst.19=A1
+cjmcu.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+cjmcu.menu.bridgerst.20=A2
+cjmcu.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+
+cjmcu.menu.bridge0.disabled=Disabled
+cjmcu.menu.bridge0.2=SDA (I2C)
+cjmcu.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+cjmcu.menu.bridge0.3=SCL (I2C)
+cjmcu.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+cjmcu.menu.bridge0.9=D9
+cjmcu.menu.bridge0.9.build.bridge_0=-DBRIDGE_0=9
+cjmcu.menu.bridge0.10=D10
+cjmcu.menu.bridge0.10.build.bridge_0=-DBRIDGE_0=10
+cjmcu.menu.bridge0.11=D11
+cjmcu.menu.bridge0.11.build.bridge_0=-DBRIDGE_0=11
+cjmcu.menu.bridge0.14=MI (MISO SPI)
+cjmcu.menu.bridge0.14.build.bridge_0=-DBRIDGE_0=14
+cjmcu.menu.bridge0.15=SCK (SCLK SPI)
+cjmcu.menu.bridge0.15.build.bridge_0=-DBRIDGE_0=15
+cjmcu.menu.bridge0.16=MO (MOSI SPI)
+cjmcu.menu.bridge0.16.build.bridge_0=-DBRIDGE_0=16
+cjmcu.menu.bridge0.18=A0
+cjmcu.menu.bridge0.18.build.bridge_0=-DBRIDGE_0=18
+cjmcu.menu.bridge0.19=A1
+cjmcu.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+cjmcu.menu.bridge0.20=A2
+cjmcu.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+
+########## SS Micro ##########
+
+ssmicro.name=SS Micro
+
+ssmicro.upload.tool=avrdude
+ssmicro.upload.protocol=avr109
+ssmicro.upload.maximum_size=28672
+ssmicro.upload.maximum_data_size=2560
+ssmicro.upload.speed=57600
+ssmicro.upload.disable_flushing=true
+ssmicro.upload.use_1200bps_touch=true
+ssmicro.upload.wait_for_upload_port=true
+
+ssmicro.bootloader.tool=avrdude
+ssmicro.bootloader.unlock_bits=0x3F
+ssmicro.bootloader.lock_bits=0x2F
+ssmicro.bootloader.low_fuses=0xFF
+ssmicro.bootloader.high_fuses=0xD8
+
+ssmicro.build.board=AVR_ATMEGA32U4
+ssmicro.build.core=arduino
+ssmicro.build.mcu=atmega32u4
+ssmicro.build.variant=ssmicro
+
+# CPU #
+ssmicro.build.f_cpu=8000000L
+ssmicro.bootloader.extended_fuses=0xFE
+ssmicro.bootloader.file=caterina/Caterina-promicro8.hex
+
+# Keyboard ID #
+ssmicro.menu.keyboardid.default=Arduino Leonardo
+ssmicro.menu.keyboardid.default.build.vid=0x2341
+ssmicro.menu.keyboardid.default.build.pid=0x8036
+ssmicro.menu.keyboardid.default.build.usb_product=Leonardo
+ssmicro.menu.keyboardid.default.build.usb_manufacturer=Arduino
+
+ssmicro.menu.keyboardid.apple=Apple Aluminium Keyboard
+ssmicro.menu.keyboardid.apple.build.vid=0x05ac
+ssmicro.menu.keyboardid.apple.build.pid=0x0221
+ssmicro.menu.keyboardid.apple.build.usb_product=Aluminium Keyboard
+ssmicro.menu.keyboardid.apple.build.usb_manufacturer=Apple
+
+ssmicro.menu.keyboardid.appleint=Apple Internal Keyboard/Trackpad
+ssmicro.menu.keyboardid.appleint.build.vid=0x05ac
+ssmicro.menu.keyboardid.appleint.build.pid=0x0259
+ssmicro.menu.keyboardid.appleint.build.usb_product=Internal Keyboard/Trackpad
+ssmicro.menu.keyboardid.appleint.build.usb_manufacturer=Apple
+
+ssmicro.menu.keyboardid.logitechhid=Logitech USB Keyboard
+ssmicro.menu.keyboardid.logitechhid.build.vid=0x046d
+ssmicro.menu.keyboardid.logitechhid.build.pid=0xc316
+ssmicro.menu.keyboardid.logitechhid.build.usb_product=USB Keyboard
+ssmicro.menu.keyboardid.logitechhid.build.usb_manufacturer=Logitech
+
+ssmicro.menu.keyboardid.logitechgaming=Logitech G910 Keyboard
+ssmicro.menu.keyboardid.logitechgaming.build.vid=0x046d
+ssmicro.menu.keyboardid.logitechgaming.build.pid=0xc335
+ssmicro.menu.keyboardid.logitechgaming.build.usb_product=G910 Keyboard
+ssmicro.menu.keyboardid.logitechgaming.build.usb_manufacturer=Logitech
+
+ssmicro.menu.keyboardid.ms=Microsoft USB Keyboard
+ssmicro.menu.keyboardid.ms.build.vid=0x045e
+ssmicro.menu.keyboardid.ms.build.pid=0xfff8
+ssmicro.menu.keyboardid.ms.build.usb_product=USB Keyboard
+ssmicro.menu.keyboardid.ms.build.usb_manufacturer=Microsoft
+
+# Protocol #
+ssmicro.menu.protocol.auto=Auto (I2C & Serial)
+ssmicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
+
+ssmicro.menu.protocol.i2c=I2C
+ssmicro.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
+
+ssmicro.menu.protocol.serial=Serial
+ssmicro.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+# Debug #
+ssmicro.menu.debug.serial=Serial (115200b, newline)
+ssmicro.menu.debug.serial.build.debug_flags=-DENABLE_DEBUG -DDEBUG_PORT=Serial -DDEBUG_BAUD=115200
+
+ssmicro.menu.debug.disabled=Disabled
+ssmicro.menu.debug.disabled.build.debug_flags=
+
+# LED #
+ssmicro.menu.ledpin.disabled=Disabled
+ssmicro.menu.ledpin.0=D0 RX (Serial)
+ssmicro.menu.ledpin.0.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=0
+ssmicro.menu.ledpin.1=D1 TX (Serial)
+ssmicro.menu.ledpin.1.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=1
+ssmicro.menu.ledpin.2=D2 SDA (I2C)
+ssmicro.menu.ledpin.2.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=2
+ssmicro.menu.ledpin.3=D3 SCL (I2C)
+ssmicro.menu.ledpin.3.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=3
+ssmicro.menu.ledpin.6=D6 A8
+ssmicro.menu.ledpin.6.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=6
+ssmicro.menu.ledpin.9=D9 A10
+ssmicro.menu.ledpin.9.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=9
+ssmicro.menu.ledpin.10=D10 A11
+ssmicro.menu.ledpin.10.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=10
+ssmicro.menu.ledpin.11=D11
+ssmicro.menu.ledpin.11.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=11
+ssmicro.menu.ledpin.14=D14 MI (MISO SPI)
+ssmicro.menu.ledpin.14.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=14
+ssmicro.menu.ledpin.15=D15 SCK (SCLK SPI)
+ssmicro.menu.ledpin.15.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=15
+ssmicro.menu.ledpin.16=D16 MO (MOSI SPI)
+ssmicro.menu.ledpin.16.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=16
+ssmicro.menu.ledpin.18=A0
+ssmicro.menu.ledpin.18.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=18
+ssmicro.menu.ledpin.19=A1
+ssmicro.menu.ledpin.19.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=19
+ssmicro.menu.ledpin.20=A2
+ssmicro.menu.ledpin.20.build.led_pin=-DNEOPIXEL -DNEOPIXEL_NUM=1 -DLED_PIN=20
+
+# Serial Bridge #
+ssmicro.menu.bridge.disabled=Disabled
+ssmicro.menu.bridge.disabled.build.bridge_flags=
+
+ssmicro.menu.bridge.serial1=Serial1
+ssmicro.menu.bridge.serial1.build.bridge_flags=-DBRIDGE_ENABLE -DBRIDGE_PORT=Serial1
+
+ssmicro.menu.bridgebutton.disabled=Disabled
+ssmicro.menu.bridgebutton.2=D2 SDA (I2C)
+ssmicro.menu.bridgebutton.2.build.bridge_button=-DBRIDGE_SWITCH=2
+ssmicro.menu.bridgebutton.3=D3 SCL (I2C)
+ssmicro.menu.bridgebutton.3.build.bridge_button=-DBRIDGE_SWITCH=3
+ssmicro.menu.bridgebutton.6=D6 A8
+ssmicro.menu.bridgebutton.6.build.bridge_button=-DBRIDGE_SWITCH=6
+ssmicro.menu.bridgebutton.9=D9 A10
+ssmicro.menu.bridgebutton.9.build.bridge_button=-DBRIDGE_SWITCH=9
+ssmicro.menu.bridgebutton.10=D10 A11
+ssmicro.menu.bridgebutton.10.build.bridge_button=-DBRIDGE_SWITCH=10
+ssmicro.menu.bridgebutton.11=D11
+ssmicro.menu.bridgebutton.11.build.bridge_button=-DBRIDGE_SWITCH=11
+ssmicro.menu.bridgebutton.14=D14 MI (MISO SPI)
+ssmicro.menu.bridgebutton.14.build.bridge_button=-DBRIDGE_SWITCH=14
+ssmicro.menu.bridgebutton.15=D15 SCK (SCLK SPI)
+ssmicro.menu.bridgebutton.15.build.bridge_button=-DBRIDGE_SWITCH=15
+ssmicro.menu.bridgebutton.16=D16 MO (MOSI SPI)
+ssmicro.menu.bridgebutton.16.build.bridge_button=-DBRIDGE_SWITCH=16
+ssmicro.menu.bridgebutton.18=A0
+ssmicro.menu.bridgebutton.18.build.bridge_button=-DBRIDGE_SWITCH=18
+ssmicro.menu.bridgebutton.19=A1
+ssmicro.menu.bridgebutton.19.build.bridge_button=-DBRIDGE_SWITCH=19
+ssmicro.menu.bridgebutton.20=A2
+ssmicro.menu.bridgebutton.20.build.bridge_button=-DBRIDGE_SWITCH=20
+
+ssmicro.menu.bridgerst.disabled=Disabled
+ssmicro.menu.bridgerst.2=D2 SDA (I2C)
+ssmicro.menu.bridgerst.2.build.bridge_rst=-DBRIDGE_RST=2
+ssmicro.menu.bridgerst.3=D3 SCL (I2C)
+ssmicro.menu.bridgerst.3.build.bridge_rst=-DBRIDGE_RST=3
+ssmicro.menu.bridgerst.6=D6 A8
+ssmicro.menu.bridgerst.6.build.bridge_rst=-DBRIDGE_RST=6
+ssmicro.menu.bridgerst.9=D9 A10
+ssmicro.menu.bridgerst.9.build.bridge_rst=-DBRIDGE_RST=9
+ssmicro.menu.bridgerst.10=D10 A11
+ssmicro.menu.bridgerst.10.build.bridge_rst=-DBRIDGE_RST=10
+ssmicro.menu.bridgerst.11=D11
+ssmicro.menu.bridgerst.11.build.bridge_rst=-DBRIDGE_RST=11
+ssmicro.menu.bridgerst.14=D14 MI (MISO SPI)
+ssmicro.menu.bridgerst.14.build.bridge_rst=-DBRIDGE_RST=14
+ssmicro.menu.bridgerst.15=D15 SCK (SCLK SPI)
+ssmicro.menu.bridgerst.15.build.bridge_rst=-DBRIDGE_RST=15
+ssmicro.menu.bridgerst.16=D16 MO (MOSI SPI)
+ssmicro.menu.bridgerst.16.build.bridge_rst=-DBRIDGE_RST=16
+ssmicro.menu.bridgerst.18=A0
+ssmicro.menu.bridgerst.18.build.bridge_rst=-DBRIDGE_RST=18
+ssmicro.menu.bridgerst.19=A1
+ssmicro.menu.bridgerst.19.build.bridge_rst=-DBRIDGE_RST=19
+ssmicro.menu.bridgerst.20=A2
+ssmicro.menu.bridgerst.20.build.bridge_rst=-DBRIDGE_RST=20
+
+ssmicro.menu.bridge0.disabled=Disabled
+ssmicro.menu.bridge0.2=D2 SDA (I2C)
+ssmicro.menu.bridge0.2.build.bridge_0=-DBRIDGE_0=2
+ssmicro.menu.bridge0.3=D3 SCL (I2C)
+ssmicro.menu.bridge0.3.build.bridge_0=-DBRIDGE_0=3
+ssmicro.menu.bridge0.6=D6 A8
+ssmicro.menu.bridge0.6.build.bridge_0=-DBRIDGE_0=6
+ssmicro.menu.bridge0.9=D9 A10
+ssmicro.menu.bridge0.9.build.bridge_0=-DBRIDGE_0=9
+ssmicro.menu.bridge0.10=D10 A11
+ssmicro.menu.bridge0.10.build.bridge_0=-DBRIDGE_0=10
+ssmicro.menu.bridge0.11=D11
+ssmicro.menu.bridge0.11.build.bridge_0=-DBRIDGE_0=11
+ssmicro.menu.bridge0.14=D14 MI (MISO SPI)
+ssmicro.menu.bridge0.14.build.bridge_0=-DBRIDGE_0=14
+ssmicro.menu.bridge0.15=D15 SCK (SCLK SPI)
+ssmicro.menu.bridge0.15.build.bridge_0=-DBRIDGE_0=15
+ssmicro.menu.bridge0.16=D16 MO (MOSI SPI)
+ssmicro.menu.bridge0.16.build.bridge_0=-DBRIDGE_0=16
+ssmicro.menu.bridge0.18=A0
+ssmicro.menu.bridge0.18.build.bridge_0=-DBRIDGE_0=18
+ssmicro.menu.bridge0.19=A1
+ssmicro.menu.bridge0.19.build.bridge_0=-DBRIDGE_0=19
+ssmicro.menu.bridge0.20=A2
+ssmicro.menu.bridge0.20.build.bridge_0=-DBRIDGE_0=20
+
