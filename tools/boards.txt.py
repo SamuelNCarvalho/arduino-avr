@@ -2,6 +2,20 @@
 
 boards = [
     {
+        "id": "dstike",
+        "name": "DSTIKE WiFi Duck (ATmega32u4)",
+        "preset": {
+            "cpu": "16MHzatmega32U4",
+            "protocol": "i2c",
+            "led": 7,
+            "bridge": "disabled",
+        },
+        "pins": {},
+        "menu": {
+            "keyboard": True,
+            "debug": True,
+        },
+    },{
         "id": "atmega32u4",
         "name": "Generic ATmega32u4",
         "preset": {},
@@ -41,20 +55,6 @@ boards = [
             "bridge_button": True,
             "bridge_reset": True,
             "bridge_pin0": True,
-        },
-    },{
-        "id": "dstike",
-        "name": "DSTIKE WiFi Duck (ATmega32u4)",
-        "preset": {
-            "cpu": "16MHzatmega32U4",
-            "protocol": "i2c",
-            "led": 7,
-            "bridge": "disabled",
-        },
-        "pins": {},
-        "menu": {
-            "keyboard": True,
-            "debug": True,
         },
     },{
         "id": "leonardo",
@@ -424,8 +424,8 @@ def keyboard_menu(id):
         print(f"{id}.menu.keyboardid.{i}={keyboard['usb_manufacturer']} {keyboard['usb_product']}")
         print(f"{id}.menu.keyboardid.{i}.build.vid={keyboard['vid']}")
         print(f"{id}.menu.keyboardid.{i}.build.pid={keyboard['pid']}")
-        print(f"{id}.menu.keyboardid.{i}.build.usb_product={keyboard['usb_product']}")
-        print(f"{id}.menu.keyboardid.{i}.build.usb_manufacturer={keyboard['usb_manufacturer']}")
+        print(f"{id}.menu.keyboardid.{i}.build.usb_product=\"{keyboard['usb_product']}\"")
+        print(f"{id}.menu.keyboardid.{i}.build.usb_manufacturer=\"{keyboard['usb_manufacturer']}\"")
         print()
 
 def keyboard_preset(id, value):
