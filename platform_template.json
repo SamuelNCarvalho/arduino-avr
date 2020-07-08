@@ -21,17 +21,17 @@
     ],
     "toolsDependencies": [
         {
-        "packager": "arduino",
+        "packager": "wifiduck",
         "name": "avr-gcc",
         "version": "7.3.0-atmel3.6.1-arduino5"
         },
         {
-        "packager": "arduino",
+        "packager": "wifiduck",
         "name": "avrdude",
         "version": "6.3.0-arduino17"
         },
         {
-        "packager": "arduino",
+        "packager": "wifiduck",
         "name": "arduinoOTA",
         "version": "1.3.0"
         }
