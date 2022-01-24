@@ -25,4 +25,4 @@ jobs:
           curl -X POST https://api.github.com/repos/spacehuhntech/arduino/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
-          --data '{"event_type": "release ${{ steps.version.outputs.TAG }}", "client_payload": { "version": "${{ steps.version.outputs.VERSION }}", "project": "${{ env.PROJECT }}", "package": "${{ steps.version.outputs.PACKAGE }}", "tag": "${{ steps.version.outputs.TAG }}"}}'
+          --data '{"event_type": "release ${{ steps.version.outputs.TAG }}", "client_payload": { "version": "${{ steps.version.outputs.VERSION }}", "project": "${{ env.PROJECT }}", "package": "${{ env.PACKAGE }}", "tag": "${{ steps.version.outputs.TAG }}"}}'
