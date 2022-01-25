@@ -165,14 +165,14 @@ atmega32u4.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 atmega32u4.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 # Protocol #
-atmega32u4.menu.protocol.auto=Auto (I2C & Serial)
-atmega32u4.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
-
 atmega32u4.menu.protocol.i2c=I2C
 atmega32u4.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
 atmega32u4.menu.protocol.serial=Serial
 atmega32u4.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+atmega32u4.menu.protocol.auto=Auto (I2C & Serial)
+atmega32u4.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
 # Debug #
 atmega32u4.menu.debug.disabled=Disabled
@@ -444,14 +444,14 @@ leonardo.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 leonardo.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 # Protocol #
-leonardo.menu.protocol.auto=Auto (I2C & Serial)
-leonardo.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
-
 leonardo.menu.protocol.i2c=I2C
 leonardo.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
 leonardo.menu.protocol.serial=Serial
 leonardo.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+leonardo.menu.protocol.auto=Auto (I2C & Serial)
+leonardo.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
 # Debug #
 leonardo.menu.debug.disabled=Disabled
@@ -715,14 +715,14 @@ micro.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 micro.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 # Protocol #
-micro.menu.protocol.auto=Auto (I2C & Serial)
-micro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
-
 micro.menu.protocol.i2c=I2C
 micro.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
 micro.menu.protocol.serial=Serial
 micro.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+micro.menu.protocol.auto=Auto (I2C & Serial)
+micro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
 # Debug #
 micro.menu.debug.disabled=Disabled
@@ -1000,14 +1000,14 @@ promicro.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 promicro.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 # Protocol #
-promicro.menu.protocol.auto=Auto (I2C & Serial)
-promicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
-
 promicro.menu.protocol.i2c=I2C
 promicro.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
 promicro.menu.protocol.serial=Serial
 promicro.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+promicro.menu.protocol.auto=Auto (I2C & Serial)
+promicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
 # Debug #
 promicro.menu.debug.disabled=Disabled
@@ -1231,14 +1231,14 @@ cjmcu.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 cjmcu.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 # Protocol #
-cjmcu.menu.protocol.auto=Auto (I2C & Serial)
-cjmcu.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
-
 cjmcu.menu.protocol.i2c=I2C
 cjmcu.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
 cjmcu.menu.protocol.serial=Serial
 cjmcu.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+cjmcu.menu.protocol.auto=Auto (I2C & Serial)
+cjmcu.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
 # Debug #
 cjmcu.menu.debug.disabled=Disabled
@@ -1422,14 +1422,14 @@ ssmicro.menu.keyboardid.ms.build.usb_product="USB Keyboard"
 ssmicro.menu.keyboardid.ms.build.usb_manufacturer="Microsoft"
 
 # Protocol #
-ssmicro.menu.protocol.auto=Auto (I2C & Serial)
-ssmicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
-
 ssmicro.menu.protocol.i2c=I2C
 ssmicro.menu.protocol.i2c.build.protocol_flags=-DENABLE_I2C
 
 ssmicro.menu.protocol.serial=Serial
 ssmicro.menu.protocol.serial.build.protocol_flags=-DENABLE_SERIAL
+
+ssmicro.menu.protocol.auto=Auto (I2C & Serial)
+ssmicro.menu.protocol.auto.build.protocol_flags=-DENABLE_I2C -DENABLE_SERIAL
 
 # Debug #
 ssmicro.menu.debug.disabled=Disabled

@@ -333,10 +333,6 @@ keyboards = {
 }
 
 protocols = {
-    "auto": {
-        "name": "Auto (I2C & Serial)",
-        "flags": "-DENABLE_I2C -DENABLE_SERIAL",
-    },
     "i2c": {
         "name": "I2C",
         "flags": "-DENABLE_I2C",
@@ -344,6 +340,10 @@ protocols = {
     "serial": {
         "name": "Serial",
         "flags": "-DENABLE_SERIAL",
+    },
+    "auto": {
+        "name": "Auto (I2C & Serial)",
+        "flags": "-DENABLE_I2C -DENABLE_SERIAL",
     },
 }
 
